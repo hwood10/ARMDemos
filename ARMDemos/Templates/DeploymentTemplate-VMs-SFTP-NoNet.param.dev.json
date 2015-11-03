@@ -1,0 +1,48 @@
+﻿{
+  "location": {
+    "value": "West US"
+  },
+  "virtualNetworkResourceGroup": {
+    "value": "Core-Group"
+  },
+  "virtualNetworkName": {
+    "value": "Safeway-Dev-QA1"
+  },
+  "DataNSGName": {
+    "value": "Tier-3"
+  },
+  "newStorageAccountName": {
+    "value": "j4uvmsarmcoregroup"
+  },
+  "storageAccountType": {
+    "value": "Standard_GRS"
+  },
+  "adminUsername": {
+    "value": "azureuser"
+  },
+  "adminPassword": {
+    "value": "just4S@feway"
+  },
+  "dnsNameForPublicIP-sftp": {
+    "value": "j4usftp"
+  },
+  "ubuntuOSVersion": {
+    "value": "14.04.2-LTS"
+  },
+  "sftpVmSize": {
+    "value": "Standard_A0"
+  },
+  "sftpVmName": {
+    "value": "j4uVM-SFTP"
+  },
+  "sftpNICName": {
+    "value": "j4uNIC-SFTP"
+  },
+  "sftpPublicIPAddressName": {
+    "value": "j4uSFTPPIP"
+  },
+  "sftpStaticIPAddress": {
+    "value": "172.31.195.10"
+  }
+}
+

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>fd1ed14f-0b9a-4de1-b73e-3212dbba9177</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkIdentifier>Deployment</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>1.0</TargetFrameworkVersion>
+    <PrepareForBuildDependsOn>
+    </PrepareForBuildDependsOn>
+  </PropertyGroup>
+  <Import Condition=" Exists('Deployment.targets') " Project="Deployment.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- vertag<:>start tokens<:>maj.min -->
+  <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
+  <!-- vertag<:>end -->
+  <ItemGroup>
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Deployment.targets">
+      <Visible>False</Visible>
+    </None>
+    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-Data.DEV.ps1" />
+    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
+    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
+    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
+    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
+    <Content Include="Scripts\Deploy-AzureResourceGroup-Network.DEV.ps1" />
+    <Content Include="Templates\DeploymentTemplate-Network-Core.json" />
+    <Content Include="Templates\DeploymentTemplate-VMs-SFTP-NoNet.json" />
+    <Content Include="Templates\DeploymentTemplate-VMs-SSH.json" />
+    <Content Include="Templates\DeploymentTemplate-VMs-Data.json" />
+    <Content Include="Templates\DeploymentTemplate-VMs-DMZ.json" />
+    <Content Include="Templates\DeploymentTemplate-VMs.json" />
+    <Content Include="Templates\DeploymentTemplate-Network.json" />
+    <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-Network-Core.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-VMs-SFTP-NoNet.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-VMs-SSH.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-VMs-Data.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-VMs-DMZ.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-VMs.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-Network.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate.param.dev.json" />
+    <None Include="VM Install Scripts\SFTPServerInstall.sh" />
+    <None Include="VM Install Scripts\WebServerInstall.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tools\AzCopy.exe" />
+    <None Include="Tools\Microsoft.Data.Edm.dll">
+      <Visible>False</Visible>
+    </None>
+    <None Include="Tools\Microsoft.Data.OData.dll">
+      <Visible>False</Visible>
+    </None>
+    <None Include="Tools\Microsoft.Data.Services.Client.dll">
+      <Visible>False</Visible>
+    </None>
+    <None Include="Tools\Microsoft.WindowsAzure.Storage.dll">
+      <Visible>False</Visible>
+    </None>
+    <None Include="Tools\Microsoft.WindowsAzure.Storage.DataMovement.dll">
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+  <Target Name="GetReferenceAssemblyPaths" />
+</Project>
