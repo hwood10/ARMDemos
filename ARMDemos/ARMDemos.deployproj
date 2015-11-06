@@ -53,6 +53,11 @@
     <None Include="Templates\DeploymentTemplate-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-Network.param.dev.json" />
     <None Include="Templates\DeploymentTemplate.param.dev.json" />
+    <None Include="Templates\DSE-mainTemplate.json" />
+    <None Include="Templates\DSE-mainTemplate.param.dev.json" />
+    <None Include="Templates\DSE-nodesTemplate.json" />
+    <None Include="Templates\DSE-opscenterInstallTemplate.json" />
+    <None Include="Templates\opscentor.json" />
     <None Include="VM Install Scripts\SFTPServerInstall.sh" />
     <None Include="VM Install Scripts\WebServerInstall.sh" />
   </ItemGroup>
