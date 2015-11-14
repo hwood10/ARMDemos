@@ -76,28 +76,35 @@
         "description": "This is name of the networkSecurityGroup that will be assigned to Application Subnet"
       }
     },
-    "VmSize": {
+    "vmSize": {
       "type": "string",
       "metadata": {
         "description": "This is the size of your ssh VM"
       }
     },
-    "VmName": {
+    "numberOfInstances": {
+      "type": "int",
+      "defaultValue": 1,
+      "metadata": {
+        "description": "Number of VMs to create"
+      }
+    },
+    "vmNamePrefix": {
       "type": "string",
       "metadata": {
         "description": "This is the name of your ssh VM"
       }
     },
-    "NICName": {
+    "osDiskNamePrefix": {
+      "type": "string",
+      "metadata": {
+        "description": "This is the name of your ssh VM"
+      }
+    },
+    "nicNamePrefix": {
       "type": "string",
       "metadata": {
         "description": "This is the name of your ssh NIC"
-      }
-    },
-    "InternalIP": {
-      "type": "string",
-      "metadata": {
-        "description": "This is the Internal IP address"
       }
     },
     "PublicIPAddressName": {
@@ -111,23 +118,31 @@
       "metadata": {
         "description": "SSH rsa public key file as a string."
       }
+    },
+    "availabilitySetName": {
+      "type": "string",
+      "metadata": {
+        "description": "This is the name of your load balancer"
+      }
+    },
+    "loadBalancerName": {
+      "type": "string",
+      "metadata": {
+        "description": "This is the name of your load balancer"
+      }
     }
   },
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "OSDiskName": "osdiskforlinuxsimple",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
     "SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('NSGName'))]",
     "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]",
-    "loadBalancerName": "loadBalancer1",
     "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('PublicIPAddressName'))]",
-    "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancerName'))]",
-    "nicId": "[resourceId('Microsoft.Network/networkInterfaces',parameters('NICName'))]",
-    "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/loadBalancerFrontEnd')]",
-    "backEndIPConfigID": "[concat(variables('nicId'),'/ipConfigurations/ipconfig1')]"
+    "lbID": "[resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancerName'))]",
+    "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/loadBalancerFrontEnd')]"
   },
   "resources": [
 
@@ -139,6 +154,13 @@
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
       }
+    },
+    {
+      "type": "Microsoft.Compute/availabilitySets",
+      "name": "[parameters('availabilitySetName')]",
+      "apiVersion": "2015-05-01-preview",
+      "location": "[resourceGroup().location]",
+      "properties": { }
     },
     {
       "apiVersion": "2015-05-01-preview",
@@ -154,7 +176,7 @@
     },
     {
       "apiVersion": "2015-05-01-preview",
-      "name": "[variables('loadBalancerName')]",
+      "name": "[parameters('loadBalancerName')]",
       "type": "Microsoft.Network/loadBalancers",
       "location": "[parameters('location')]",
       "dependsOn": [
@@ -176,18 +198,35 @@
             "name": "loadBalancerBackEnd"
           }
         ],
-        "inboundNatRules": [
+        "loadBalancingRules": [
           {
-            "name": "SSH",
+            "Name": "lbrule",
             "properties": {
               "frontendIPConfiguration": {
-                "id": "[variables('frontEndIPConfigID')]"
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancerName')), '/frontendIpConfigurations/loadBalancerFrontEnd')]"
               },
-              "protocol": "tcp",
+              "backendAddressPool": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancerName')), '/backendAddressPools/loadBalancerBackEnd')]"
+              },
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancerName')), '/probes/lbprobe')]"
+              },
+              "protocol": "Tcp",
               "frontendPort": 22,
               "backendPort": 22,
-              "enableFloatingIP": false
+              "idleTimeoutInMinutes": 15
             }
+          }
+        ],
+        "probes": [
+          {
+            "properties": {
+              "protocol": "Tcp",
+              "port": 22,
+              "intervalInSeconds": 30,
+              "numberOfProbes": 2
+            },
+            "name": "lbprobe"
           }
         ]
       }
@@ -195,29 +234,27 @@
     {
       "apiVersion": "2015-05-01-preview",
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[parameters('NICName')]",
+      "name": "[concat(parameters('nicNamePrefix'),'-',copyindex())]",
       "location": "[parameters('location')]",
+      "copy": {
+        "name": "nicLoop",
+        "count": "[parameters('numberOfInstances')]"
+      },
       "dependsOn": [
-        "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]"
+        "[concat('Microsoft.Network/loadBalancers/', parameters('loadBalancerName'))]"
       ],
       "properties": {
         "ipConfigurations": [
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAllocationMethod": "Static",
-              "privateIPAddress": "[parameters('InternalIP')]",
+              "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[variables('SubnetRef')]"
               },
               "loadBalancerBackendAddressPools": [
                 {
                   "id": "[concat(variables('lbID'), '/backendAddressPools/LoadBalancerBackend')]"
-                }
-              ],
-              "loadBalancerInboundNatRules": [
-                {
-                  "id": "[concat(variables('lbID'),'/inboundNatRules/SSH')]"
                 }
               ]
             }
@@ -228,18 +265,26 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('VmName')]",
+      "name": "[concat(parameters('vmNamePrefix'),'-', copyindex())]",
       "location": "[parameters('location')]",
+      "copy": {
+        "name": "virtualMachineLoop",
+        "count": "[parameters('numberOfInstances')]"
+      },
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]",
-        "[concat('Microsoft.Network/networkInterfaces/', parameters('NICName'))]"
+        "[concat('Microsoft.Network/networkInterfaces/', parameters('nicNamePrefix'),'-',copyindex())]",
+        "[concat('Microsoft.Compute/availabilitySets/', parameters('availabilitySetName'))]"
       ],
       "properties": {
+        "availabilitySet": {
+          "id": "[resourceId('Microsoft.Compute/availabilitySets',parameters('availabilitySetName'))]"
+        },
         "hardwareProfile": {
-          "vmSize": "[parameters('VmSize')]"
+          "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[parameters('VmName')]",
+          "computerName": "[concat(parameters('vmNamePrefix'),'-', copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "linuxConfiguration": {
@@ -262,9 +307,9 @@
             "version": "latest"
           },
           "osDisk": {
-            "name": "osdisk",
+            "name": "[concat(parameters('vmNamePrefix'),'-osDisk','-',copyindex())]",
             "vhd": {
-              "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'_',parameters('VmName'),'.vhd')]"
+              "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',parameters('osDiskNamePrefix'),'_',parameters('vmNamePrefix'),'_',copyindex(),'.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -273,7 +318,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('NICName'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('nicNamePrefix'),'-',copyindex()))]"
             }
           ]
         },

@@ -29,20 +29,29 @@
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
   },
-  "VmSize": {
+  "numberOfInstances": {
+    "value": 4
+  },
+  "vmSize": {
     "value": "Standard_A0"
   },
-  "VmName": {
+  "vmNamePrefix": {
     "value": "SSH-VM"
   },
-  "NICName": {
-    "value": "SSH-NIC"
+  "osDiskNamePrefix": {
+    "value": "osdisk"
   },
-  "InternalIP": {
-    "value": "10.0.0.6"
+  "nicNamePrefix": {
+    "value": "SSH-NIC"
   },
   "PublicIPAddressName": {
     "value": "SSH-PIP"
+  },
+  "loadBalancerName": {
+    "value": "SSH-LB"
+  },
+  "availabilitySetName": {
+    "value": "SSH-AVS"
   },
   "sshKeyData": {
     "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4nk9a0z3bmmKaRWlA18wms/ojmh8k4JuCeaEmuLL7oGotJfs5CZw9O1WpDrhaatGdqk1HgOYCVBLqbCHRbq+HPf9lR4m8Rkn8flvCRaU9tKWeUnBgyfLOCuF0mxl8tvs4OCQCy4SfjDkwkEP8il4nphGrEr0cT3DQlcDQIU6RXrv2kudqE2TT3jCafGEustXGp7bR1wyJnTXU7iansSkt5piIJkS7LU6NhcwAytt+TIM+LLDx7FORj7YoooIQN+zx/QShNuQQTtnI6LZCkdbLVnvOjuoRgPAFjk9Iy1qfyC5NNYWDUoUpAXrmnjS0xbBe8SYSoc2DcaTTyET7gjEd imported-openssh-key"
