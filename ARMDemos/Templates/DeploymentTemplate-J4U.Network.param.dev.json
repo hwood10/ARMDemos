@@ -1,0 +1,108 @@
+﻿{
+  "location": {
+    "value": "West US"
+  },
+  "VNetName": {
+    "value": "j4uVNet"
+  },
+  "VNetAddressPrefix": {
+    "value": "10.0.0.0/16"
+  },
+  "SSHBastionName": {
+    "value": "SSH"
+  },
+  "SSHBastionSubnetPrefix": {
+    "value": "10.0.0.0/24"
+  },
+  "SSHBastionPort": {
+    "value": "22"
+  },
+  "RdpJumpName": {
+    "value": "RDP"
+  },
+  "RdpJumpSubnetPrefix": {
+    "value": "10.0.1.0/24"
+  },
+  "RdpJumpPort": {
+    "value": "3389"
+  },
+  "SftpName": {
+    "value": "Sftp"
+  },
+  "SftpSubnetPrefix": {
+    "value": "10.0.2.0/24"
+  },
+  "SftpPort": {
+    "value": "22"
+  },
+  "PublicService1Name": {
+    "value": "Clip"
+  },
+  "PublicService1SubnetPrefix": {
+    "value": "10.0.11.0/24"
+  },
+  "PublicService1Port": {
+    "value": "9000"
+  },
+  "PublicService2Name": {
+    "value": "MyList"
+  },
+  "PublicService2SubnetPrefix": {
+    "value": "10.0.12.0/24"
+  },
+  "PublicService2Port": {
+    "value": "9000"
+  },  
+  "PublicService3Name": {
+    "value": "PublicService3"
+  },
+  "PublicService3SubnetPrefix": {
+    "value": "10.0.13.0/24"
+  },
+  "PublicService3Port": {
+    "value": "9000"
+  },
+  "PublicService4Name": {
+    "value": "PublicService4"
+  },
+  "PublicService4SubnetPrefix": {
+    "value": "10.0.14.0/24"
+  },
+  "PublicService4Port": {
+    "value": "9000"
+  },
+  "PublicService5Name": {
+    "value": "PublicService5"
+  },
+  "PublicService5SubnetPrefix": {
+    "value": "10.0.15.0/24"
+  },
+  "PublicService5Port": {
+    "value": "9000"
+  },  
+  "PublicService6Name": {
+    "value": "PublicService6"
+  },
+  "PublicService6SubnetPrefix": {
+    "value": "10.0.16.0/24"
+  },
+  "PublicService6Port": {
+    "value": "9000"
+  },  
+  "PublicService7Name": {
+    "value": "PublicService7"
+  },
+  "PublicService7SubnetPrefix": {
+    "value": "10.0.17.0/24"
+  },
+  "PublicService7Port": {
+    "value": "9000"
+  },  
+  "DataNSGName": {
+    "value": "Data"
+  },
+  "DataSubnetPrefix": {
+    "value": "10.0.200.0/24"
+  }
+}
+
