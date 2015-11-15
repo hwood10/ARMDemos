@@ -715,6 +715,33 @@
         },
         "subnets": [
           {
+            "name": "[parameters('SSHBastionName')]",
+            "properties": {
+              "addressPrefix": "[parameters('SSHBastionSubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('SSHBastionName'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('RdpJumpName')]",
+            "properties": {
+              "addressPrefix": "[parameters('RdpJumpSubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('RdpJumpName'))]"
+              }
+            }
+          },          
+          {
+            "name": "[parameters('SftpName')]",
+            "properties": {
+              "addressPrefix": "[parameters('SftpSubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('SftpName'))]"
+              }
+            }
+          },
+          {
             "name": "[parameters('PublicService1Name')]",
             "properties": {
               "addressPrefix": "[parameters('PublicService1SubnetPrefix')]",
@@ -724,14 +751,60 @@
             }
           },
           {
-            "name": "[parameters('SSHBastionName')]",
+            "name": "[parameters('PublicService2Name')]",
             "properties": {
-              "addressPrefix": "[parameters('SSHBastionSubnetPrefix')]",
+              "addressPrefix": "[parameters('PublicService2SubnetPrefix')]",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('SSHBastionName'))]"
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService2Name'))]"
               }
             }
           },
+          {
+            "name": "[parameters('PublicService3Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PublicService3SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService3Name'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('PublicService4Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PublicService4SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService4Name'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('PublicService5Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PublicService5SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService5Name'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('PublicService6Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PublicService6SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService6Name'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('PublicService7Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PublicService7SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService7Name'))]"
+              }
+            }
+          },
+
           {
             "name": "[parameters('DataNSGName')]",
             "properties": {

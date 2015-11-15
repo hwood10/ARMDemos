@@ -31,6 +31,8 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-J4U.RDP-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-J4U.SFTP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-J4U.SSH-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-J4U.Network.dev.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-Data.DEV.ps1" />
@@ -39,6 +41,8 @@
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-Network.DEV.ps1" />
+    <Content Include="Templates\DeploymentTemplate-J4U.RDP-VMs.json" />
+    <Content Include="Templates\DeploymentTemplate-J4U.SFTP-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-J4U.Network.json" />
     <Content Include="Templates\DeploymentTemplate-Network-Core.json" />
     <Content Include="Templates\DeploymentTemplate-VMs-SFTP-NoNet.json" />
@@ -49,6 +53,8 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-J4U.RDP-VMs.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-J4U.SFTP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-J4U.Network.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-Network-Core.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-VMs-SFTP-NoNet.param.dev.json" />

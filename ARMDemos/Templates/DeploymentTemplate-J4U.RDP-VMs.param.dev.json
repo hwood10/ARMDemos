@@ -1,18 +1,18 @@
 ﻿{
-  "location": {
+ "location": {
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "ARMDemos-Dev"
+    "value": "J4U-DEV-Network"
   },
   "virtualNetworkName": {
     "value": "j4uVNet"
   },
-  "SSHNSGName": {
-    "value": "SSH"
+  "NSGName": {
+    "value": "RDP"
   },
   "newStorageAccountName": {
-    "value": "j4uvms"
+    "value": "j4udevsrdpvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,22 +24,40 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "j4ussh"
+    "value": "j4udevrdp"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
   },
-  "sshVmSize": {
-    "value": "Standard_A0"
+  "numberOfInstances": {
+    "value": 2
   },
-  "sshVmName": {
-    "value": "j4uVM-SSH"
+  "vmSize": {
+    "value": "Standard_A1"
   },
-  "sshNICName": {
-    "value": "j4uNIC-SSH"
+  "vmNamePrefix": {
+    "value": "RDP-VM"
   },
-  "sshPublicIPAddressName": {
-    "value": "j4uSSHPIP"
+  "osDiskNamePrefix": {
+    "value": "osdisk"
+  },
+  "nicNamePrefix": {
+    "value": "RDP-NIC"
+  },
+  "PublicIPAddressName": {
+    "value": "RDP-PIP"
+  },
+  "loadBalancerName": {
+    "value": "RPD-LB"
+  },
+  "loadBalancerFrontEndPort": {
+    "value": 3389
+  },
+  "loadBalancerBackEndPort": {
+    "value": 3389
+  },
+  "availabilitySetName": {
+    "value": "RDP-AVS"
   },
   "sshKeyData": {
     "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4nk9a0z3bmmKaRWlA18wms/ojmh8k4JuCeaEmuLL7oGotJfs5CZw9O1WpDrhaatGdqk1HgOYCVBLqbCHRbq+HPf9lR4m8Rkn8flvCRaU9tKWeUnBgyfLOCuF0mxl8tvs4OCQCy4SfjDkwkEP8il4nphGrEr0cT3DQlcDQIU6RXrv2kudqE2TT3jCafGEustXGp7bR1wyJnTXU7iansSkt5piIJkS7LU6NhcwAytt+TIM+LLDx7FORj7YoooIQN+zx/QShNuQQTtnI6LZCkdbLVnvOjuoRgPAFjk9Iy1qfyC5NNYWDUoUpAXrmnjS0xbBe8SYSoc2DcaTTyET7gjEd imported-openssh-key"

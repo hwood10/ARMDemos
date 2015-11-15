@@ -100,7 +100,7 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
-    "dnsNameForPublicIP-ssh": {
+    "dnsNameForPublicIP": {
       "type": "string",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
@@ -431,7 +431,7 @@
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsNameForPublicIP-ssh')]"
+          "domainNameLabel": "[parameters('dnsNameForPublicIP')]"
         }
       }
     },

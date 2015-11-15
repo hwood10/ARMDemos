@@ -41,7 +41,7 @@
   "dnsNameForPublicIP-web": {
     "value": "j4uweb"
   },
-  "dnsNameForPublicIP-ssh": {
+  "dnsNameForPublicIP": {
     "value": "j4ussh"
   },
   "ubuntuOSVersion": {
