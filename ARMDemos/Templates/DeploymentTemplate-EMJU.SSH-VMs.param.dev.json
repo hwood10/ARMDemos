@@ -12,7 +12,7 @@
     "value": "SSH"
   },
   "newStorageAccountName": {
-    "value": "emju1devsshvms"
+    "value": "emjuazdvsshvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "emju1devssh"
+    "value": "emjuazdvssh"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"

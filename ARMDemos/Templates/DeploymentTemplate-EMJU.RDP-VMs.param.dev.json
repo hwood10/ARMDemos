@@ -3,7 +3,7 @@
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-1DEV-Network"
+    "value": "EMJU-DEV-Network"
   },
   "virtualNetworkName": {
     "value": "emjuVNet"
@@ -12,7 +12,7 @@
     "value": "RDP"
   },
   "newStorageAccountName": {
-    "value": "emju1devsrdpvms"
+    "value": "emjuazdvrdpvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "emju1devrdp"
+    "value": "emjuazdvrdp"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"

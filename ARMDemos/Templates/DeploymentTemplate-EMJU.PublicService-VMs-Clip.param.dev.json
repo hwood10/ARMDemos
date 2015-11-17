@@ -3,7 +3,7 @@
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-1DEV-Network"
+    "value": "EMJU-DEV-Network"
   },
   "virtualNetworkName": {
     "value": "emjuVNet"
@@ -12,7 +12,7 @@
     "value": "Clip"
   },
   "newStorageAccountName": {
-    "value": "emju1devclipvms"
+    "value": "emjuazdvclipvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "emju1devclip"
+    "value": "emjuazdvclip"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -47,15 +47,24 @@
   "PublicIPAddressName": {
     "value": "Clip-PIP"
   },
-  "loadBalancerName": {
-    "value": "Clip-LB"
+  "applicationGatewayName": {
+    "value": "Clip-AG"
   },
-  "loadBalancerFrontEndPort": {
+  "applicationGatewayFrontEndPort": {
     "value": 9000
   },
-  "loadBalancerBackEndPort": {
+  "applicationGatewayBackEndAddressPrefix": {
+    "value": "10.0.11."
+  },
+  "applicationGatewayBaseIP": {
+    "value":  5
+  },
+  "applicationGatewayBackEndPort": {
     "value": 9000
   },
+  "applicationGatewaySkuName": {
+    "value": "Standard_Medium"
+    },
   "availabilitySetName": {
     "value": "Clip-AVS"
   }

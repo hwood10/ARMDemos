@@ -42,7 +42,7 @@
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-Network.DEV.ps1" />
-    <Content Include="Templates\DeploymentTemplate-EMJU.PublicPlayService-VMs.json" />
+    <Content Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.SFTP-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.Network.json" />
@@ -55,7 +55,7 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
-    <None Include="Templates\DeploymentTemplate-EMJU.ClipService-VMs.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clip.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.SFTP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.Network.param.dev.json" />
