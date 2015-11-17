@@ -125,6 +125,12 @@
         "description": "This is the name of your application gateway "
       }
     },
+    "applicationGatewaySubnet": {
+      "type": "string",
+      "metadata": {
+        "description": "This is the front end port of your aoplication gateway"
+      }
+    },
     "applicationGatewayFrontEndPort": {
       "type": "int",
       "metadata": {
@@ -168,7 +174,8 @@
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
-    "SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('NSGName'))]",
+    "serviceSubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('NSGName'))]",
+    "appGatewaySubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('applicationGatewaySubnet'))]",
     "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('PublicIPAddressName'))]",
     "applicationGatewayID": "[resourceId('Microsoft.Network/applicationGateways',parameters('applicationGatewayName'))]"
   },
@@ -218,7 +225,7 @@
             "name": "appGatewayIpConfig",
             "properties": {
               "subnet": {
-                "id": "[variables('SubnetRef')]"
+                "id": "[variables('appGatewaySubnetRef')]"
               }
             }
           }
@@ -243,7 +250,15 @@
         ],
         "backendAddressPools": [
           {
-            "name": "appGatewayBackendPool"
+            "name": "appGatewayBackendPool",
+            "properties": {
+                "BackendAddresses": [{
+                    "IpAddress": "[concat(parameters('applicationGatewayBackEndAddressPrefix'),add(0,parameters('applicationGatewayBaseIP')))]"
+                    }, {
+                    "IpAddress": "[concat(parameters('applicationGatewayBackEndAddressPrefix'),add(1,parameters('applicationGatewayBaseIP')))]"
+                    }
+                ]
+            }
           }
         ],
         "backendHttpSettingsCollection": [
@@ -308,13 +323,8 @@
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "subnet": {
-                "id": "[variables('SubnetRef')]"
-              },
-              "loadBalancerBackendAddressPools": [
-                {
-                  "id": "[concat(variables('applicationGatewayID'), '/backendAddressPools/appGatewayBackendPool')]"
-                }
-              ]
+                "id": "[variables('serviceSubnetRef')]"
+              }
             }
           }
         ]

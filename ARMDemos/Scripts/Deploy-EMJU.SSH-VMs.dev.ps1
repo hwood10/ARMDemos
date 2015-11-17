@@ -2,7 +2,7 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'EMJU-DEV-SSH-VMs',  
+  [string] $ResourceGroupName = 'EMJU-AZDV-SSH-VMs',  
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 

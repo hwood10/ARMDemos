@@ -1,15 +1,15 @@
 ﻿{
- "location": {
+  "location": {
     "value": "West US"
-  },  
+  },
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-DEV-Network"
+    "value": "EMJU-AZDV-Network"
   },
   "virtualNetworkName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "NSGName": {
-    "value": "Clip"
+    "value": "Clipping"
   },
   "newStorageAccountName": {
     "value": "emjuazdvclipvms"
@@ -18,10 +18,10 @@
     "value": "Standard_GRS"
   },
   "adminUsername": {
-    "value": "azureuser"
+    "value": "safewayadmin"
   },
   "adminPassword": {
-    "value": "just4Terr@ce"
+    "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
     "value": "emjuazdvclip"
@@ -36,19 +36,22 @@
     "value": "Standard_A2"
   },
   "vmNamePrefix": {
-    "value": "Clip-VM"
+    "value": "Clipping-VM"
   },
   "osDiskNamePrefix": {
     "value": "osdisk"
   },
   "nicNamePrefix": {
-    "value": "Clip-NIC"
+    "value": "Clipping-NIC"
   },
   "PublicIPAddressName": {
-    "value": "Clip-PIP"
+    "value": "Clipping-PIP"
   },
   "applicationGatewayName": {
-    "value": "Clip-AG"
+    "value": "Clipping-AG"
+  },
+  "applicationGatewaySubnet": {
+    "value": "AppGateways"
   },
   "applicationGatewayFrontEndPort": {
     "value": 9000
@@ -57,7 +60,7 @@
     "value": "10.0.11."
   },
   "applicationGatewayBaseIP": {
-    "value":  5
+    "value":  4
   },
   "applicationGatewayBackEndPort": {
     "value": 9000
@@ -66,7 +69,7 @@
     "value": "Standard_Medium"
     },
   "availabilitySetName": {
-    "value": "Clip-AVS"
+    "value": "Clipping-AVS"
   }
 }
 

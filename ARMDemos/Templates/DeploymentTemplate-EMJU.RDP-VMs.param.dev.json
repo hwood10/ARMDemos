@@ -3,10 +3,10 @@
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-DEV-Network"
+    "value": "EMJU-AZDV-Network"
   },
   "virtualNetworkName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "NSGName": {
     "value": "RDP"

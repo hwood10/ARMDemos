@@ -31,7 +31,7 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
-    <Content Include="Scripts\Deploy-EMJU.ClipService-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.ClippingService-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RDP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SSH-VMs.dev.ps1" />
@@ -55,7 +55,7 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
-    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clip.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.SFTP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.Network.param.dev.json" />

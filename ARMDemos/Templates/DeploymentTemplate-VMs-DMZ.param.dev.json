@@ -6,7 +6,7 @@
     "value": "ARMDemos-Dev"
   },
   "virtualNetworkName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "DMZNSGName": {
     "value": "DMZ"

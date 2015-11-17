@@ -3,7 +3,7 @@
     "value": "West US"
   },
   "VNetName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "VNetAddressPrefix": {
     "value": "10.0.0.0/16"
@@ -35,8 +35,17 @@
   "SftpPort": {
     "value": "22"
   },
+  "AppGatewayName": {
+    "value": "AppGateways"
+  },
+  "AppGatewaySubnetPrefix": {
+    "value": "10.0.10.0/24"
+  },
+  "AppGatewayPort": {
+    "value": "9000"
+  },
   "PublicService1Name": {
-    "value": "Clip"
+    "value": "Clipping"
   },
   "PublicService1SubnetPrefix": {
     "value": "10.0.11.0/24"
@@ -45,7 +54,7 @@
     "value": "9000"
   },
   "PublicService2Name": {
-    "value": "MyList"
+    "value": "PartnerClipping"
   },
   "PublicService2SubnetPrefix": {
     "value": "10.0.12.0/24"
@@ -54,7 +63,7 @@
     "value": "9000"
   },  
   "PublicService3Name": {
-    "value": "PublicService3"
+    "value": "Gallery"
   },
   "PublicService3SubnetPrefix": {
     "value": "10.0.13.0/24"
@@ -63,7 +72,7 @@
     "value": "9000"
   },
   "PublicService4Name": {
-    "value": "PublicService4"
+    "value": "CoreServices"
   },
   "PublicService4SubnetPrefix": {
     "value": "10.0.14.0/24"
@@ -72,7 +81,7 @@
     "value": "9000"
   },
   "PublicService5Name": {
-    "value": "PublicService5"
+    "value": "MyCard"
   },
   "PublicService5SubnetPrefix": {
     "value": "10.0.15.0/24"
@@ -81,7 +90,7 @@
     "value": "9000"
   },  
   "PublicService6Name": {
-    "value": "PublicService6"
+    "value": "MyList"
   },
   "PublicService6SubnetPrefix": {
     "value": "10.0.16.0/24"
@@ -90,12 +99,39 @@
     "value": "9000"
   },  
   "PublicService7Name": {
-    "value": "PublicService7"
+    "value": "Lite"
   },
   "PublicService7SubnetPrefix": {
     "value": "10.0.17.0/24"
   },
   "PublicService7Port": {
+    "value": "9000"
+  },
+  "PublicService8Name": {
+    "value": "OfferSetup"
+  },
+  "PublicService8SubnetPrefix": {
+    "value": "10.0.18.0/24"
+  },
+  "PublicService8Port": {
+    "value": "9000"
+  },  
+  "PublicService9Name": {
+    "value": "EMMD"
+  },
+  "PublicService9SubnetPrefix": {
+    "value": "10.0.19.0/24"
+  },
+  "PublicService9Port": {
+    "value": "9000"
+  },  
+  "PublicService10Name": {
+    "value": "ClipEventProcessing"
+  },
+  "PublicService10SubnetPrefix": {
+    "value": "10.0.20.0/24"
+  },
+  "PublicService10Port": {
     "value": "9000"
   },  
   "DataNSGName": {

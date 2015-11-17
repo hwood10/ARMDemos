@@ -3,10 +3,10 @@
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-1DEV-Network"
+    "value": "EMJU-AZDV-Network"
   },
   "virtualNetworkName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "NSGName": {
     "value": "SSH"
@@ -18,10 +18,10 @@
     "value": "Standard_GRS"
   },
   "adminUsername": {
-    "value": "azureuser"
+    "value": "safewayadmin"
   },
   "adminPassword": {
-    "value": "just4Terr@ce"
+    "value": "s@few@yEmJuD3V"
   },
   "dnsNameForPublicIP": {
     "value": "emjuazdvssh"

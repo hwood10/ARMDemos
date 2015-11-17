@@ -3,7 +3,7 @@
     "value": "West US"
   },
   "virtualNetworkName": {
-    "value": "emjuVNet"
+    "value": "EMJU-VNet"
   },
   "addressPrefix": {
     "value": "10.0.0.0/16"

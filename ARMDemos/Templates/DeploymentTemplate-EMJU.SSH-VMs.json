@@ -300,7 +300,7 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "linuxConfiguration": {
-            "disablePasswordAuthentication": "true",
+            "disablePasswordAuthentication": "false",
             "ssh": {
               "publicKeys": [
                 {
