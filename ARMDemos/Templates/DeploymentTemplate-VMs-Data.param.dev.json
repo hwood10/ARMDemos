@@ -6,13 +6,13 @@
     "value": "ARMDemos-Dev"
   },
   "virtualNetworkName": {
-    "value": "j4uVNet"
+    "value": "emjuVNet"
   },
   "DataNSGName": {
     "value": "Data"
   },
   "newStorageAccountName": {
-    "value": "j4uvms"
+    "value": "emjuvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -30,10 +30,10 @@
     "value": "Standard_A3"
   },
   "dbVmName": {
-    "value": "j4uVM-Data"
+    "value": "emjuVM-Data"
   },
   "dbNICName": {
-    "value": "j4uNIC-Data"
+    "value": "emjuNIC-Data"
   },
   "dbDataDiskInGB": {
     "value": "200"

@@ -109,7 +109,7 @@
     },
     "scriptUrl": {
         "type": "string",
-        "defaultValue": "https://j4uarmdemoresources.blob.core.windows.net/installscripts/",
+        "defaultValue": "https://emjuarmdemoresources.blob.core.windows.net/installscripts/",
         "metadata": {
             "description": "Post install scripts directory"
         }

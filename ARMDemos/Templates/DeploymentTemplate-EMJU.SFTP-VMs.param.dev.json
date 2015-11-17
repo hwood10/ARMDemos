@@ -3,16 +3,16 @@
     "value": "West US"
   },  
   "virtualNetworkResourceGroup": {
-    "value": "J4U-DEV-Network"
+    "value": "EMJU-1DEV-Network"
   },
   "virtualNetworkName": {
-    "value": "j4uVNet"
+    "value": "emjuVNet"
   },
   "NSGName": {
     "value": "Sftp"
   },
   "newStorageAccountName": {
-    "value": "j4udevsftpvms"
+    "value": "emju1devsftpvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "j4udevsftp"
+    "value": "emju1devsftp"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"

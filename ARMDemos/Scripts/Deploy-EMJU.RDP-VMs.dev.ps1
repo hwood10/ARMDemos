@@ -2,13 +2,13 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'J4U-DEV-RDP-VMs',  
+  [string] $ResourceGroupName = 'EMJU-1DEV-RDP-VMs',  
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-J4U.RDP-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-J4U.RDP-VMs.param.dev.json',
+  [string] $TemplateFile = '..\Templates\DeploymentTemplate-EMJU.RDP-VMs.json',
+  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-EMJU.RDP-VMs.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )
@@ -30,7 +30,7 @@ $TemplateParametersFile = [System.IO.Path]::Combine($PSScriptRoot, $TemplatePara
 
 #Login-AzureRmAccount
 
-Set-AzureRmContext -SubscriptionId 8f982005-15fc-4d91-894a-c436a01505c5 -SubscriptionName "J4U Development" -TenantId b7f604a0-00a9-4188-9248-42f3a5aac2e9
+Set-AzureRmContext -SubscriptionId 8f982005-15fc-4d91-894a-c436a01505c5 -SubscriptionName "EMJU Development" -TenantId b7f604a0-00a9-4188-9248-42f3a5aac2e9
 
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `

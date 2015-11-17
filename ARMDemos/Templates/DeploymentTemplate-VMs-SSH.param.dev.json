@@ -6,13 +6,13 @@
     "value": "ARMDemos-Dev"
   },
   "virtualNetworkName": {
-    "value": "j4uVNet"
+    "value": "emjuVNet"
   },
   "SSHNSGName": {
     "value": "SSH"
   },
   "newStorageAccountName": {
-    "value": "j4uvms"
+    "value": "emjuvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP": {
-    "value": "j4ussh"
+    "value": "emjussh"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -33,13 +33,13 @@
     "value": "Standard_A0"
   },
   "sshVmName": {
-    "value": "j4uVM-SSH"
+    "value": "emjuVM-SSH"
   },
   "sshNICName": {
-    "value": "j4uNIC-SSH"
+    "value": "emjuNIC-SSH"
   },
   "sshPublicIPAddressName": {
-    "value": "j4uSSHPIP"
+    "value": "emjuSSHPIP"
   },
   "sshKeyData": {
     "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4nk9a0z3bmmKaRWlA18wms/ojmh8k4JuCeaEmuLL7oGotJfs5CZw9O1WpDrhaatGdqk1HgOYCVBLqbCHRbq+HPf9lR4m8Rkn8flvCRaU9tKWeUnBgyfLOCuF0mxl8tvs4OCQCy4SfjDkwkEP8il4nphGrEr0cT3DQlcDQIU6RXrv2kudqE2TT3jCafGEustXGp7bR1wyJnTXU7iansSkt5piIJkS7LU6NhcwAytt+TIM+LLDx7FORj7YoooIQN+zx/QShNuQQTtnI6LZCkdbLVnvOjuoRgPAFjk9Iy1qfyC5NNYWDUoUpAXrmnjS0xbBe8SYSoc2DcaTTyET7gjEd imported-openssh-key"

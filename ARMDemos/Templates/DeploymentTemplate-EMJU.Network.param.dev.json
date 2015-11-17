@@ -3,7 +3,7 @@
     "value": "West US"
   },
   "VNetName": {
-    "value": "j4uVNet"
+    "value": "emjuVNet"
   },
   "VNetAddressPrefix": {
     "value": "10.0.0.0/16"

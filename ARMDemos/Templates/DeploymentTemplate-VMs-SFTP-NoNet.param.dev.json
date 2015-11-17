@@ -12,7 +12,7 @@
     "value": "Tier-3"
   },
   "newStorageAccountName": {
-    "value": "j4uvmsarmcoregroup"
+    "value": "emjuvmsarmcoregroup"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "just4S@feway"
   },
   "dnsNameForPublicIP-sftp": {
-    "value": "j4usftp"
+    "value": "emjusftp"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -33,13 +33,13 @@
     "value": "Standard_A0"
   },
   "sftpVmName": {
-    "value": "j4uVM-SFTP"
+    "value": "emjuVM-SFTP"
   },
   "sftpNICName": {
-    "value": "j4uNIC-SFTP"
+    "value": "emjuNIC-SFTP"
   },
   "sftpPublicIPAddressName": {
-    "value": "j4uSFTPPIP"
+    "value": "emjuSFTPPIP"
   },
   "sftpStaticIPAddress": {
     "value": "172.31.195.10"

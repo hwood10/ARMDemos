@@ -3,7 +3,7 @@
     "value": "West US"
   },
   "virtualNetworkName": {
-    "value": "j4uVNet"
+    "value": "emjuVNet"
   },
   "addressPrefix": {
     "value": "10.0.0.0/16"
@@ -27,7 +27,7 @@
     "value": "Data"
   },
   "newStorageAccountName": {
-    "value": "j4uvms"
+    "value": "emjuvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -39,10 +39,10 @@
     "value": "just4Terr@ce"
   },
   "dnsNameForPublicIP-web": {
-    "value": "j4uweb"
+    "value": "emjuweb"
   },
   "dnsNameForPublicIP": {
-    "value": "j4ussh"
+    "value": "emjussh"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -57,28 +57,28 @@
     "value": "Standard_A3"
   },
   "webVmName": {
-    "value": "j4uVM-Web"
+    "value": "emjuVM-Web"
   },
   "sshVmName": {
-    "value": "j4uVM-SSH"
+    "value": "emjuVM-SSH"
   },
   "dbVmName": {
-    "value": "j4uVM-Data"
+    "value": "emjuVM-Data"
   },
   "webNICName": {
-    "value": "j4uNIC-Web"
+    "value": "emjuNIC-Web"
   },
   "sshNICName": {
-    "value": "j4uNIC-SSH"
+    "value": "emjuNIC-SSH"
   },
   "dbNICName": {
-    "value": "j4uNIC-Data"
+    "value": "emjuNIC-Data"
   },
   "dmzPublicIPAddressName": {
-    "value": "j4uWebPIP"
+    "value": "emjuWebPIP"
   },
   "sshPublicIPAddressName": {
-    "value": "j4uSSHPIP"
+    "value": "emjuSSHPIP"
   },
   "dbDataDiskInGB": {
     "value": "200"
