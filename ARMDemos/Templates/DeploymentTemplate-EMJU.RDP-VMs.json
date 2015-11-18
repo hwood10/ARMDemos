@@ -172,7 +172,8 @@
       "name": "[parameters('availabilitySetName')]",
       "apiVersion": "2015-05-01-preview",
       "location": "[resourceGroup().location]",
-      "properties": { }
+      "properties": {
+      }
     },
     {
       "apiVersion": "2015-05-01-preview",
