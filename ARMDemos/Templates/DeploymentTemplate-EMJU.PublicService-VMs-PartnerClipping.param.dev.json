@@ -1,0 +1,75 @@
+﻿{
+  "location": {
+    "value": "West US"
+  },
+  "virtualNetworkResourceGroup": {
+    "value": "EMJU-AZDV-Network"
+  },
+  "virtualNetworkName": {
+    "value": "EMJU-VNet"
+  },
+  "NSGName": {
+    "value": "Clipping"
+  },
+  "newStorageAccountName": {
+    "value": "emjuazdvclipvms"
+  },
+  "storageAccountType": {
+    "value": "Standard_GRS"
+  },
+  "adminUsername": {
+    "value": "safewayadmin"
+  },
+  "adminPassword": {
+    "value": "s@f3W@yEmJU"
+  },
+  "dnsNameForPublicIP": {
+    "value": "emjuazdvclip"
+  },
+  "ubuntuOSVersion": {
+    "value": "14.04.2-LTS"
+  },
+  "numberOfInstances": {
+    "value": 2
+  },
+  "vmSize": {
+    "value": "Standard_A2"
+  },
+  "vmNamePrefix": {
+    "value": "Clipping-VM"
+  },
+  "osDiskNamePrefix": {
+    "value": "osdisk"
+  },
+  "nicNamePrefix": {
+    "value": "Clipping-NIC"
+  },
+  "PublicIPAddressName": {
+    "value": "Clipping-PIP"
+  },
+  "applicationGatewayName": {
+    "value": "Clipping-AG"
+  },
+  "applicationGatewaySubnet": {
+    "value": "AppGateways"
+  },
+  "applicationGatewayFrontEndPort": {
+    "value": 9000
+  },
+  "applicationGatewayBackEndAddressPrefix": {
+    "value": "10.0.11."
+  },
+  "applicationGatewayBaseIP": {
+    "value":  4
+  },
+  "applicationGatewayBackEndPort": {
+    "value": 9000
+  },
+  "applicationGatewaySkuName": {
+    "value": "Standard_Medium"
+    },
+  "availabilitySetName": {
+    "value": "Clipping-AVS"
+  }
+}
+

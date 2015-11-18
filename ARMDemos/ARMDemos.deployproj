@@ -31,6 +31,7 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-Gateway.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ClippingService-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RDP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.dev.ps1" />
@@ -42,6 +43,7 @@
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-Network.DEV.ps1" />
+    <Content Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-EMJU.SFTP-VMs.json" />
@@ -55,6 +57,8 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.SFTP-VMs.param.dev.json" />
@@ -74,6 +78,7 @@
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
     <None Include="Templates\opscentor.json" />
     <None Include="VM Install Scripts\SFTPServerInstall.sh" />
+    <None Include="VM Install Scripts\PlayServerInstall.sh" />
     <None Include="VM Install Scripts\WebServerInstall.sh" />
   </ItemGroup>
   <ItemGroup>
