@@ -57,16 +57,16 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
-    "ubuntuOSVersion": {
+    "windowsOSVersion": {
       "type": "string",
-      "defaultValue": "14.04.2-LTS",
+      "defaultValue": "2012-R2-Datacenter",
       "allowedValues": [
-        "12.04.5-LTS",
-        "14.04.2-LTS",
-        "15.04"
+        "2008-R2-SP1",
+        "2012-Datacenter",
+        "2012-R2-Datacenter"
       ],
       "metadata": {
-        "description": "The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values: 12.04.5-LTS, 14.04.2-LTS, 15.04."
+        "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version. Allowed values: 2008-R2-SP1, 2012-Datacenter, 2012-R2-Datacenter."
       }
     },
     "NSGName": {
@@ -145,8 +145,8 @@
     }
   },
   "variables": {
-    "imagePublisher": "Canonical",
-    "imageOffer": "UbuntuServer",
+    "imagePublisher": "MicrosoftWindowsServer",
+    "imageOffer": "WindowsServer",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
@@ -298,24 +298,13 @@
         "osProfile": {
           "computerName": "[concat(parameters('vmNamePrefix'),'-', copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]",
-          "linuxConfiguration": {
-            "disablePasswordAuthentication": "true",
-            "ssh": {
-              "publicKeys": [
-                {
-                  "path": "[variables('sshKeyPath')]",
-                  "keyData": "[parameters('sshKeyData')]"
-                }
-              ]
-            }
-          }
+          "adminPassword": "[parameters('adminPassword')]"
         },
         "storageProfile": {
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('ubuntuOSVersion')]",
+            "sku": "[parameters('windowsOSVersion')]",
             "version": "latest"
           },
           "osDisk": {

@@ -18,22 +18,22 @@
     "value": "Standard_GRS"
   },
   "adminUsername": {
-    "value": "azureuser"
+    "value": "safewayadmin"
   },
   "adminPassword": {
-    "value": "just4Terr@ce"
+    "value": "s@few@yEmJuD3"
   },
   "dnsNameForPublicIP": {
     "value": "emjuazdvrdp"
   },
-  "ubuntuOSVersion": {
-    "value": "14.04.2-LTS"
+  "windowsOSVersion": {
+    "value": "2012-R2-Datacenter"
   },
   "numberOfInstances": {
     "value": 2
   },
   "vmSize": {
-    "value": "Standard_A1"
+    "value": "Standard_A2"
   },
   "vmNamePrefix": {
     "value": "RDP-VM"

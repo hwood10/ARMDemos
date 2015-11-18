@@ -33,7 +33,7 @@
     </None>
     <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-Gateway.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ClippingService-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.RDP-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SSH-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Network.dev.ps1" />
