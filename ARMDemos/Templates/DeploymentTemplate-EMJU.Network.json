@@ -899,6 +899,48 @@
               "priority": 170,
               "direction": "Inbound"
             }
+          },
+          {
+            "name": "Allow_PlayService8_Datastax",
+            "properties": {
+              "description": "Allow PlayService8 Datastax",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9042",
+              "sourceAddressPrefix": "[parameters('PublicService8SubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 180,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Allow_PlayService9_Datastax",
+            "properties": {
+              "description": "Allow PlayService9 Datastax",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9042",
+              "sourceAddressPrefix": "[parameters('PublicService9SubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 190,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Allow_PlayService10_Datastax",
+            "properties": {
+              "description": "Allow PlayService10 Datastax",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9042",
+              "sourceAddressPrefix": "[parameters('PublicService10SubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 200,
+              "direction": "Inbound"
+            }
           }
         ]
       }

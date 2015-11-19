@@ -57,6 +57,7 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-Clipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.dev.json" />
