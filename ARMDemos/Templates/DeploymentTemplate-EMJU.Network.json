@@ -941,6 +941,20 @@
               "priority": 200,
               "direction": "Inbound"
             }
+          },
+          {
+            "name": "Allow_RdpJump_Datastax_Admin",
+            "properties": {
+              "description": "Allow RdpJump Datastax http access",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8888",
+              "sourceAddressPrefix": "[parameters('RdpJumpSubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 300,
+              "direction": "Inbound"
+            }
           }
         ]
       }

@@ -31,8 +31,13 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-EMJU.ClipEventProcessing-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.OfferSetup-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyList-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyCard-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Gallery-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-Gateway.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.ClippingService-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SSH-VMs.dev.ps1" />
@@ -57,6 +62,12 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ClipEventProcessing.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-OfferSetup.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyList.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-CoreServices.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyCard.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Gallery.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-Clipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-PartnerClipping.param.dev.json" />
