@@ -2,13 +2,13 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'EMJU-AZDV-Clipping-VMs',  
+  [string] $ResourceGroupName = 'EMJU-AZDV-CoreServices-VMs',  
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
   [string] $TemplateFile = '..\Templates\DeploymentTemplate-EMJU.PublicService-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.dev.json',
+  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-EMJU.PublicService-VMs-CoreServices.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )
