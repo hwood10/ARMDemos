@@ -133,6 +133,96 @@
   },
   "PublicService10Port": {
     "value": "9000"
+  },
+  "PublicService11Name": {
+    "value": "MyListMobile"
+  },
+  "PublicService11SubnetPrefix": {
+    "value": "10.0.22.0/24"
+  },
+  "PublicService11Port": {
+    "value": "9000"
+  },
+  "PublicService12Name": {
+    "value": "GalleryMobile"
+  },
+  "PublicService12SubnetPrefix": {
+    "value": "10.0.23.0/24"
+  },
+  "PublicService12Port": {
+    "value": "9000"
+  },  
+  "PublicService13Name": {
+    "value": "CoreservicesMobile"
+  },
+  "PublicService13SubnetPrefix": {
+    "value": "10.0.24.0/24"
+  },
+  "PublicService13Port": {
+    "value": "9000"
+  },
+  "PublicService14Name": {
+    "value": "SortByAisleMobile"
+  },
+  "PublicService14SubnetPrefix": {
+    "value": "10.0.25.0/24"
+  },
+  "PublicService14Port": {
+    "value": "9000"
+  },
+  "PublicService15Name": {
+    "value": "ScanMobile"
+  },
+  "PublicService15SubnetPrefix": {
+    "value": "10.0.26.0/24"
+  },
+  "PublicService15Port": {
+    "value": "9000"
+  },  
+  "PublicService16Name": {
+    "value": "WeeklyAdMobile"
+  },
+  "PublicService16SubnetPrefix": {
+    "value": "10.0.27.0/24"
+  },
+  "PublicService16Port": {
+    "value": "9000"
+  },  
+  "PublicService17Name": {
+    "value": "MiscServicesMobile"
+  },
+  "PublicService17SubnetPrefix": {
+    "value": "10.0.28.0/24"
+  },
+  "PublicService17Port": {
+    "value": "9000"
+  },
+  "PublicService18Name": {
+    "value": "PublicService18"
+  },
+  "PublicService18SubnetPrefix": {
+    "value": "10.0.29.0/24"
+  },
+  "PublicService18Port": {
+    "value": "9000"
+  },  
+  "PublicService19Name": {
+    "value": "PublicService19"
+  },
+  "PublicService19SubnetPrefix": {
+    "value": "10.0.30.0/24"
+  },
+  "PublicService19Port": {
+    "value": "9000"
+  },  
+  "PublicService20Name": {
+    "value": "PublicService20"
+  },
+  "PublicService20SubnetPrefix": {
+    "value": "10.0.31.0/24"
+  },
+  "PublicService20Port": {
+    "value": "9000"
   },  
   "DataNSGName": {
     "value": "Data"

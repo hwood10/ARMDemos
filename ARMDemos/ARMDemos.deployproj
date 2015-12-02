@@ -31,6 +31,13 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-EMJU.MiscServicesMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.SortByAisleMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.CoreServicesMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.GalleryMobile-VMs.dev.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyListMobile-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.CoreServices-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ClipEventProcessing-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.OfferSetup-VMs.dev.ps1" />
@@ -63,6 +70,13 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MiscServicesMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-WeeklyAdMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ScanMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-SortByAisleMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-CoreServicesMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-GalleryMobile.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyListMobile.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ClipEventProcessing.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-OfferSetup.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyList.param.dev.json" />
