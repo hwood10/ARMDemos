@@ -31,6 +31,9 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.df.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.SSH-VMs.pf.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Network.pf.ps1" />
     <Content Include="Scripts\Deploy-EMJU.MiscServicesMobile-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.dev.ps1" />
@@ -70,6 +73,8 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.SSH-VMs.param.pf.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MiscServicesMobile.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-WeeklyAdMobile.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ScanMobile.param.dev.json" />
