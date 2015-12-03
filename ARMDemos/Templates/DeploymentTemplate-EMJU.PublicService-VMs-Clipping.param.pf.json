@@ -12,7 +12,7 @@
     "value": "Clipping"
   },
   "newStorageAccountName": {
-    "value": "emjuazdvclipvms"
+    "value": "emjuazpfclipvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
-    "value": "emjuazdvclip"
+    "value": "emjuazpfclip"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"

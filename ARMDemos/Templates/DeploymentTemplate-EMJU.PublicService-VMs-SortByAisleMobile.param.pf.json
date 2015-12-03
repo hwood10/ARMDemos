@@ -3,16 +3,16 @@
     "value": "West US"
   },
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-AZDV-Network"
+    "value": "EMJU-AZPF-Network"
   },
   "virtualNetworkName": {
     "value": "EMJU-VNet"
   },
   "NSGName": {
-    "value": "PartnerClipping"
+    "value": "SortByAisleMobile"
   },
   "newStorageAccountName": {
-    "value": "emjuazdvprtnclipvms"
+    "value": "emjuazpfsortbyaislemvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
-    "value": "emjuazdvprtnclip"
+    "value": "emjuazpfsortbyaislemobile"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -36,40 +36,40 @@
     "value": "Standard_A2"
   },
   "vmNamePrefix": {
-    "value": "PartnerClipping-VM"
+    "value": "SortByAisleMobile-VM"
   },
   "osDiskNamePrefix": {
     "value": "osdisk"
   },
   "nicNamePrefix": {
-    "value": "PartnerClipping-NIC"
+    "value": "SortByAisleMobile-NIC"
   },
   "PublicIPAddressName": {
-    "value": "PartnerClipping-PIP"
+    "value": "SortByAisleMobile-PIP"
   },
-  "loadbalancerGatewayName": {
-    "value": "PartnerClipping-AG"
+  "loadBalancerName": {
+    "value": "SortByAisleMobile-LB"
   },
-  "loadbalancerGatewaySubnet": {
+  "loadBalancerSubnet": {
     "value": "AppGateways"
   },
-  "loadbalancerGatewayFrontEndPort": {
+  "loadBalancerFrontEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewayBackEndAddressPrefix": {
-    "value": "10.0.12."
+  "loadBalancerBackEndAddressPrefix": {
+    "value": "10.0.25."
   },
-  "loadbalancerGatewayBaseIP": {
+  "loadBalancerBaseIP": {
     "value":  4
   },
-  "loadbalancerGatewayBackEndPort": {
+  "loadBalancerBackEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewaySkuName": {
+  "loadBalancerSkuName": {
     "value": "Standard_Medium"
     },
   "availabilitySetName": {
-    "value": "PartnerClipping-AVS"
+    "value": "SortByAisleMobile-AVS"
   }
 }
 

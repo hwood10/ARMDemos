@@ -3,7 +3,7 @@
     "value": "West US"
   },
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-AZDV-Network"
+    "value": "EMJU-AZPF-Network"
   },
   "virtualNetworkName": {
     "value": "EMJU-VNet"
@@ -12,7 +12,7 @@
     "value": "PartnerClipping"
   },
   "newStorageAccountName": {
-    "value": "emjuazdvprtnclipvms"
+    "value": "emjuazpfprtnclipvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
-    "value": "emjuazdvprtnclip"
+    "value": "emjuazpfprtnclip"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"

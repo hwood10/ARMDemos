@@ -31,9 +31,23 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
-    <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.df.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.SSH-VMs.pf.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.Network.pf.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.SortByAisleMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-VM.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.OfferSetup-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyList-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyListMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MyCard-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.MiscServicesMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Gallery-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.GalleryMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.CoreServices-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.CoreServicesMobile-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.ClipEventProcessing-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.SSH-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.Network.ps1" />
     <Content Include="Scripts\Deploy-EMJU.MiscServicesMobile-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.dev.ps1" />
@@ -73,6 +87,22 @@
     <Content Include="Templates\DeploymentTemplate-VMs.json" />
     <Content Include="Templates\DeploymentTemplate-Network.json" />
     <Content Include="Templates\DeploymentTemplate.json" />
+    <None Include="Scripts\MasterDeploy-EMJU.pf.ps1" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-WeeklyAdMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-SortByAisleMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.dev.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ScanMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-OfferSetup.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyList.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyListMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyCard.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MiscServicesMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-GalleryMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Gallery.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-CoreServices.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-CoreServicesMobile.param.pf.json" />
+    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-ClipEventProcessing.param.pf.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.pf.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.SSH-VMs.param.pf.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MiscServicesMobile.param.dev.json" />
@@ -89,7 +119,6 @@
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyCard.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Gallery.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-Clipping.param.dev.json" />
-    <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-Gateway-PartnerClipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.PublicService-VMs-Clipping.param.dev.json" />
     <None Include="Templates\DeploymentTemplate-EMJU.RDP-VMs.param.dev.json" />
