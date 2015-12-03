@@ -33,7 +33,7 @@
     </None>
     <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SortByAisleMobile-VMs.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-VM.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.PartnerClipping-VM.ps1" />
     <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.OfferSetup-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.MyList-VMs.ps1" />
