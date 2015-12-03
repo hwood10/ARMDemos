@@ -47,27 +47,27 @@
   "PublicIPAddressName": {
     "value": "PartnerClipping-PIP"
   },
-  "loadbalancerGatewayName": {
+  "loadBalancerName": {
     "value": "PartnerClipping-AG"
   },
-  "loadbalancerGatewaySubnet": {
+  "loadBalancerSubnet": {
     "value": "AppGateways"
   },
-  "loadbalancerGatewayFrontEndPort": {
+  "loadBalancerFrontEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewayBackEndAddressPrefix": {
+  "loadBalancerBackEndAddressPrefix": {
     "value": "10.0.12."
   },
-  "loadbalancerGatewayBaseIP": {
-    "value":  4
+  "loadBalancerBaseIP": {
+    "value": 4
   },
-  "loadbalancerGatewayBackEndPort": {
+  "loadBalancerBackEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewaySkuName": {
+  "loadBalancerSkuName": {
     "value": "Standard_Medium"
-    },
+  },
   "availabilitySetName": {
     "value": "PartnerClipping-AVS"
   }
