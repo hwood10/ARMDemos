@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-EMJU.PublicService-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-EMJU.PublicService-VMs-MyListMobile.param.dev.json',
+  [string] $TemplateFile = '..\Templates\EMJU.PublicService-VMs.json',
+  [string] $TemplateParametersFile = '..\Templates\EMJU.PublicService-VMs-MyListMobile.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

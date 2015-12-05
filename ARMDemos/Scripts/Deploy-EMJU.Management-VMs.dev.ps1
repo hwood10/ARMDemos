@@ -2,13 +2,13 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'EMJU-AZDV-ScanMobile-VMs',  
+  [string] $ResourceGroupName = 'EMJU-AZDV-Management-VMs',  
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\EMJU.PublicService-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\EMJU.PublicService-VMs-ScanMobile.param.dev.json',
+  [string] $TemplateFile = '..\Templates\EMJU.PrivateService-VMs.json',
+  [string] $TemplateParametersFile = '..\Templates\EMJU.PrivateService-VMs-Management.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

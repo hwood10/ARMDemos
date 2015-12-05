@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-VMs-DMZ.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-VMs-DMZ.param.dev.json',
+  [string] $TemplateFile = 'VMs-DMZ.json',
+  [string] $TemplateParametersFile = 'VMs-DMZ.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

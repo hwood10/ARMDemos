@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-EMJU.SSH-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-EMJU.SSH-VMs.param.dev.json',
+  [string] $TemplateFile = '..\Templates\EMJU.SSH-VMs.json',
+  [string] $TemplateParametersFile = '..\Templates\EMJU.SSH-VMs.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

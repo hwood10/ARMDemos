@@ -452,6 +452,24 @@
         "description": "This is name of the port that will be opened to public service Subnet"
       }
     },
+    "PrivateService1Name": {
+      "type": "string",
+      "metadata": {
+        "description": "This is name of the networkSecurityGroup that will be assigned to private service Subnet"
+      }
+    },
+    "PrivateService1SubnetPrefix": {
+      "type": "string",
+      "metadata": {
+        "description": "This is CIDR prefix for the private Service 1 Subnet"
+      }
+    },
+    "PrivateService1Port": {
+      "type": "string",
+      "metadata": {
+        "description": "This is name of the port that will be opened to private service Subnet"
+      }
+    },
     "DataNSGName": {
       "type": "string",
       "metadata": {
@@ -489,8 +507,9 @@
     "publicService16SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService16Name'))]",
     "publicService17SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService17Name'))]",
     "publicService18SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService18Name'))]",
-    "publicService19SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService19Name'))]", 
-    "publicService20SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService20Name'))]",       
+    "publicService19SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService19Name'))]",
+    "publicService20SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PublicService20Name'))]",
+    "privateService1SubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('PrivateService1Name'))]",          
     "dataSubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('DataNSGName'))]"
 
   },
@@ -1354,6 +1373,44 @@
     {
       "apiVersion": "2015-05-01-preview",
       "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[parameters('PrivateService1Name')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "ssh-bastion",
+            "properties": {
+              "description": "Allow SSH",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "[parameters('SSHBastionSubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "rule_play",
+            "properties": {
+              "description": "Allow play",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "[parameters('PrivateService1Port')]",
+              "sourceAddressPrefix": "[parameters('VNetAddressPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 130,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Network/networkSecurityGroups",
       "name": "[parameters('DataNSGName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -1699,6 +1756,7 @@
         "[concat('Microsoft.Network/networkSecurityGroups/', parameters('PublicService18Name'))]",
         "[concat('Microsoft.Network/networkSecurityGroups/', parameters('PublicService19Name'))]",
         "[concat('Microsoft.Network/networkSecurityGroups/', parameters('PublicService20Name'))]",
+        "[concat('Microsoft.Network/networkSecurityGroups/', parameters('PrivateService1Name'))]",
         "[concat('Microsoft.Network/networkSecurityGroups/', parameters('DataNSGName'))]"
       ],
       "properties": {
@@ -1921,6 +1979,15 @@
               "addressPrefix": "[parameters('PublicService20SubnetPrefix')]",
               "networkSecurityGroup": {
                 "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PublicService20Name'))]"
+              }
+            }
+          },
+          {
+            "name": "[parameters('PrivateService1Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('PrivateService1SubnetPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('PrivateService1Name'))]"
               }
             }
           },

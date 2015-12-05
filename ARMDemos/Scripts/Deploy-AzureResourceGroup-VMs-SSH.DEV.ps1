@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-VMs-SSH.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-VMs-SSH.param.dev.json',
+  [string] $TemplateFile = 'VMs-SSH.json',
+  [string] $TemplateParametersFile = 'VMs-SSH.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

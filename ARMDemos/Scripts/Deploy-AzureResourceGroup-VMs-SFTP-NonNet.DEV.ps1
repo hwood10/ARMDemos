@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-VMs-SFTP-NoNet.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-VMs-SFTP-NoNet.param.dev.json',
+  [string] $TemplateFile = 'VMs-SFTP-NoNet.json',
+  [string] $TemplateParametersFile = 'VMs-SFTP-NoNet.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

@@ -7,8 +7,8 @@ Param(
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\DeploymentTemplate-Network.json',
-  [string] $TemplateParametersFile = '..\Templates\DeploymentTemplate-Network.param.dev.json',
+  [string] $TemplateFile = 'Network.json',
+  [string] $TemplateParametersFile = 'Network.param.dev.json',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe'
 )

@@ -224,6 +224,15 @@
   "PublicService20Port": {
     "value": "9000"
   },  
+  "PrivateService1Name": {
+    "value": "Management"
+  },
+  "PrivateService1SubnetPrefix": {
+    "value": "10.0.101.0/24"
+  },
+  "PrivateService1Port": {
+    "value": "9000"
+  },  
   "DataNSGName": {
     "value": "Data"
   },
