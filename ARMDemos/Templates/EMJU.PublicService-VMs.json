@@ -166,6 +166,20 @@
       "metadata": {
         "description": "Sku Name"
       }
+    },
+    "postInstallScriptUrl": {
+        "type": "string",
+        "defaultValue": "https://emjuazpfresources.blob.core.windows.net/playvmresources/",
+        "metadata": {
+            "description": "Post install scripts directory"
+        }
+    },
+    "postInstallScript": {
+        "type": "string",
+        "defaultValue": "PlayServerInstall.sh",
+        "metadata": {
+            "description": "Post install script"
+        }
     }
   },
   "variables": {
@@ -353,6 +367,31 @@
           }
         }
       }
+    },
+    {
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "name": "[concat(parameters('vmNamePrefix'),'-', copyindex() , '/postInstallTask')]",
+        "apiVersion": "2015-05-01-preview",
+        "location": "[parameters('location')]",
+        "copy": {
+            "name": "virtualMachineLoop",
+            "count": "[parameters('numberOfInstances')]"
+        },
+        "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmNamePrefix'),'-', copyindex())]",
+        "[concat('Microsoft.Network/networkInterfaces/', parameters('nicNamePrefix'),'-', copyindex())]"
+        ],
+        "properties": {
+            "publisher": "Microsoft.OSTCExtensions",
+            "type": "CustomScriptForLinux",
+            "typeHandlerVersion": "1.2",
+            "settings": {
+                "fileUris": [
+                "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]"
+                ],
+                "commandToExecute": "[concat('bash ', parameters('postInstallScript'))]"
+            }
+        }
     }
   ]
 }

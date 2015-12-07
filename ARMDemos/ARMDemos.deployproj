@@ -31,6 +31,8 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Deploy-EMJU.Management-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Management-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.ps1" />
@@ -78,7 +80,7 @@
     <Content Include="Templates\EMJU.PrivateService-VMs.json" />
     <Content Include="Templates\EMJU.PublicService-Gateway.json" />
     <Content Include="Templates\EMJU.PublicService-VMs.json" />
-    <Content Include="Templates\EMJU.RDP-VMs.json" />
+    <Content Include="Templates\EMJU.RdpJump-VMs.json" />
     <Content Include="Templates\EMJU.SFTP-VMs.json" />
     <Content Include="Templates\EMJU.Network.json" />
     <Content Include="Templates\Demo-Network-Core.json" />
@@ -91,6 +93,8 @@
     <Content Include="Templates\Demo-Network.json" />
     <Content Include="Templates\Demo.json" />
     <None Include="Scripts\MasterDeploy-EMJU.PerfTest.ps1" />
+    <None Include="Templates\EMJU.PrivateService-VMs-Management.param.pf.json" />
+    <None Include="Templates\EMJU.RdpJump-VMs.param.pf.json" />
     <None Include="Templates\EMJU.PrivateService-VMs-Management.param.dev.json" />
     <None Include="Templates\EMJU.SFTP-VMs.param.pf.json" />
     <None Include="Templates\EMJU.PublicService-VMs-WeeklyAdMobile.param.pf.json" />
@@ -126,7 +130,7 @@
     <None Include="Templates\EMJU.PublicService-Gateway-Clipping.param.dev.json" />
     <None Include="Templates\EMJU.PublicService-Gateway-PartnerClipping.param.dev.json" />
     <None Include="Templates\EMJU.PublicService-VMs-Clipping.param.dev.json" />
-    <None Include="Templates\EMJU.RDP-VMs.param.dev.json" />
+    <None Include="Templates\EMJU.RdpJump-VMs.param.dev.json" />
     <None Include="Templates\EMJU.SFTP-VMs.param.dev.json" />
     <None Include="Templates\EMJU.Network.param.dev.json" />
     <None Include="Templates\Demo-Network-Core.param.dev.json" />
