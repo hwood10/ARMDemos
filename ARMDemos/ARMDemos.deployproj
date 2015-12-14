@@ -33,7 +33,6 @@
     </None>
     <Content Include="Scripts\Deploy-EMJU.Management-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.Management-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SortByAisleMobile-VMs.ps1" />
@@ -52,25 +51,7 @@
     <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SSH-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Network.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.MiscServicesMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.WeeklyAdMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.ScanMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.SortByAisleMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.CoreServicesMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.GalleryMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.MyListMobile-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.CoreServices-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.ClipEventProcessing-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.OfferSetup-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.MyList-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.MyCard-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.Gallery-VMs.dev.ps1" />
     <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-Gateway.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.Clipping-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.SSH-VMs.dev.ps1" />
-    <Content Include="Scripts\Deploy-EMJU.Network.dev.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-Data.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
     <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
@@ -92,7 +73,9 @@
     <Content Include="Templates\Demo-VMs.json" />
     <Content Include="Templates\Demo-Network.json" />
     <Content Include="Templates\Demo.json" />
+    <None Include="Scripts\MasterDeploy-EMJU.Development.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.PerfTest.ps1" />
+    <None Include="Templates\EMJU.Network.param.pf.json" />
     <None Include="Templates\EMJU.PrivateService-VMs-Management.param.pf.json" />
     <None Include="Templates\EMJU.RdpJump-VMs.param.pf.json" />
     <None Include="Templates\EMJU.PrivateService-VMs-Management.param.dev.json" />

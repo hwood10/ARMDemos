@@ -2,15 +2,18 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'EMJU-AZDV-CoreServices-VMs',  
+  [string] $ResourceGroupName,   
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\EMJU.PublicService-VMs.json',
-  [string] $TemplateParametersFile = '..\Templates\EMJU.PublicService-VMs-CoreServices.param.dev.json',
+  [string] $TemplateFile, 
+  [string] $TemplateParametersFile,
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
-  [string] $AzCopyPath = '..\Tools\AzCopy.exe'
+  [string] $AzCopyPath = '..\Tools\AzCopy.exe',
+  [string] [Parameter(Mandatory=$true)] $SubscriptionID,
+  [string] [Parameter(Mandatory=$true)] $SubscriptionName,
+  [string] [Parameter(Mandatory=$true)] $TenantID
 )
 
 
@@ -28,9 +31,7 @@ $TemplateParametersFile = [System.IO.Path]::Combine($PSScriptRoot, $TemplatePara
 
 # Create or update the resource group using the specified template file and template parameters file
 
-#Login-AzureRmAccount
-
-Set-AzureRmContext -SubscriptionId 8f982005-15fc-4d91-894a-c436a01505c5 -SubscriptionName "EMJU Development" -TenantId b7f604a0-00a9-4188-9248-42f3a5aac2e9
+Set-AzureRmContext -SubscriptionId $SubscriptionID -SubscriptionName $SubscriptionName -TenantId $TenantID
 
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `
