@@ -31,6 +31,12 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-Network.DEV.ps1" />
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-Data.DEV.ps1" />
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
+    <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Management-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.SFTP-VMs.ps1" />
@@ -52,12 +58,6 @@
     <Content Include="Scripts\Deploy-EMJU.SSH-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Network.ps1" />
     <Content Include="Scripts\Deploy-EMJU.PartnerClippingService-Gateway.dev.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-Data.DEV.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs-DMZ.DEV.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
-    <Content Include="Scripts\Deploy-AzureResourceGroup-Network.DEV.ps1" />
     <Content Include="Templates\Demo\Demo-Network-Core.json" />
     <Content Include="Templates\Demo\Demo-Network.json" />
     <Content Include="Templates\Demo\Demo-VMs-Data.json" />
