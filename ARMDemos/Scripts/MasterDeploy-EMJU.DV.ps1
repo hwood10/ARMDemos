@@ -5,8 +5,8 @@
 #Login-AzureRmAccount
 
 $tenantID = "b7f604a0-00a9-4188-9248-42f3a5aac2e9"
-$subscriptionID = "ec4b8e6e-6a27-4430-a1ac-3ded010cb563"
-$subscriptionName = "EMJU-pf"
+$subscriptionID = "9f9d3632-1f42-4407-acb7-8c00b5afb5e9"
+$subscriptionName = "EMJU-dv"
 $ResourceGroupLocation = "westus"
 
 $NetworkTemplate = "..\Templates\EMJU.Network.json"
@@ -27,9 +27,9 @@ Set-AzureRmContext -SubscriptionId $subscriptionID -SubscriptionName $subscripti
 
 #Network
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Network")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-Network")
 $invokeArgs += ("-TemplateFile", $NetworkTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.Network.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.Network.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
@@ -39,25 +39,25 @@ Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
 #Rdp Jump
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-RdpJump-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-RdpJump-VMs")
 $invokeArgs += ("-TemplateFile", $RdpJumpTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.RdpJump-VMs.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.RdpJump-VMs.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.RdpJump-VMs.ps1 $invokeArgs"
 
 #SFTP
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-SFTP-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-SFTP-VMs")
 $invokeArgs += ("-TemplateFile", $SFTPTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.SFTP-VMs.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.SFTP-VMs.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.SFTP-VMs.ps1 $invokeArgs"
 
 #SSH Bastion
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-SSH-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-SSH-VMs")
 $invokeArgs += ("-TemplateFile", $SSHBastionTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.SSH-VMs.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.SSH-VMs.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.SSH-VMs.ps1 $invokeArgs"
 
@@ -66,121 +66,121 @@ Invoke-Expression ".\Deploy-EMJU.SSH-VMs.ps1 $invokeArgs"
 ##############################
 #ClipEventProcessing
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-ClipEventProcessing-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-ClipEventProcessing-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-ClipEventProcessing.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-ClipEventProcessing.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.ClipEventProcessing-VMs.ps1 $invokeArgs"
 
 #Clipping
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Clipping-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-Clipping-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-Clipping.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-Clipping.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.Clipping-VMs.ps1 $invokeArgs"
 
 #CoreServices
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-CoreServices-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-CoreServices-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-CoreServices.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-CoreServices.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.CoreServices-VMs.ps1 $invokeArgs"
 
 #CoreServicesMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-CoreServicesMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-CoreServicesMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-CoreServicesMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-CoreServicesMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.CoreServicesMobile-VMs.ps1 $invokeArgs"
 
 #Gallery
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Gallery-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-Gallery-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-Gallery.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-Gallery.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.Gallery-VMs.ps1 $invokeArgs"
 
 #GalleryMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-GalleryMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-GalleryMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-GalleryMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-GalleryMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.GalleryMobile-VMs.ps1 $invokeArgs"
 
 #MiscServicesMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-MiscServicesMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-MiscServicesMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-MiscServicesMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-MiscServicesMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.MiscServicesMobile-VMs.ps1 $invokeArgs"
 
 #MyCard
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-MyCard-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-MyCard-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-MyCard.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-MyCard.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.MyCard-VMs.ps1 $invokeArgs"
 
 #MyList
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-MyList-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-MyList-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-MyList.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-MyList.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.MyList-VMs.ps1 $invokeArgs"
 
 #MyListMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-MyListMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-MyListMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-MyListMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-MyListMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.MyListMobile-VMs.ps1 $invokeArgs"
 
 #OfferSetup
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-OfferSetup-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-OfferSetup-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-OfferSetup.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-OfferSetup.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.OfferSetup-VMs.ps1 $invokeArgs"
 
 #PartnerClipping
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-PartnerClipping-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-PartnerClipping-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-PartnerClipping.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-PartnerClipping.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.PartnerClipping-VMs.ps1 $invokeArgs"
 
 #ScanMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-ScanMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-ScanMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-ScanMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-ScanMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.ScanMobile-VMs.ps1 $invokeArgs"
 
 #SortByAisleMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-SortByAisleMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-SortByAisleMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-SortByAisleMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-SortByAisleMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.SortByAisleMobile-VMs.ps1 $invokeArgs"
 
 #WeeklyAdMobile
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-WeeklyAdMobile-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-WeeklyAdMobile-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-WeeklyAdMobile.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PublicService-VMs-WeeklyAdMobile.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.WeeklyAdMobile-VMs.ps1 $invokeArgs"
 
@@ -189,9 +189,9 @@ Invoke-Expression ".\Deploy-EMJU.WeeklyAdMobile-VMs.ps1 $invokeArgs"
 ###############################
 #Management
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Management-VMs")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV2-Management-VMs")
 $invokeArgs += ("-TemplateFile", $PrivateServiceTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PrivateService-VMs-Management.param.pf.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.PrivateService-VMs-Management.param.dv.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.Management-VMs.ps1 $invokeArgs"
 
