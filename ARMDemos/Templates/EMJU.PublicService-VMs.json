@@ -180,6 +180,13 @@
         "metadata": {
             "description": "Post install script"
         }
+    },
+    "playBinaryPackage": {
+        "type": "string",
+        "defaultValue": "binaryPackage.bin",
+        "metadata": {
+            "description": "Post install script"
+        }
     }
   },
   "variables": {
@@ -387,7 +394,8 @@
             "typeHandlerVersion": "1.2",
             "settings": {
                 "fileUris": [
-                "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]"
+                  "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]",
+                  "[concat(parameters('postInstallScriptUrl'), parameters('playBinaryPackage'))]"
                 ],
                 "commandToExecute": "[concat('bash ', parameters('postInstallScript'))]"
             }

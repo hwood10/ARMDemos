@@ -70,6 +70,15 @@
     },
   "availabilitySetName": {
     "value": "ClipEventProcessing-AVS"
+  },
+  "postInstallScriptUrl": {
+      "value": "https://emjuazpfresources.blob.core.windows.net/playvmresources/"
+  },
+  "postInstallScript": {
+    "value": "PlayServerInstall.sh"
+  },
+  "playBinaryPackage": {
+      "value": "ClipEventProcessingBinary.txt"
   }
 }
 

@@ -198,3 +198,17 @@ Invoke-Expression ".\Deploy-EMJU.Management-VMs.ps1 $invokeArgs"
 ###############################
 ##PaaS Services
 ###############################
+#Redis
+#Service
+#Storage account for SFTP
+#API-M when it is available on ARM
+
+
+###############################
+##Datastax
+###############################
+
+
+###############################
+##HDInsight
+###############################
