@@ -22,13 +22,13 @@ $subscriptionArgs += ("-SubscriptionID",$subscriptionID)
 $subscriptionArgs += ("-SubscriptionName",$subscriptionName)
 $subscriptionArgs += ("-TenantID",$tenantID)
 
-Set-AzureRmContext -SubscriptionId $subscriptionID -SubscriptionName $subscriptionName -TenantId $tenantID
+Set-AzureRmContext -SubscriptionId $subscriptionID -TenantId $tenantID -SubscriptionName $subscriptionName 
 
 #Network
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-Network")
 $invokeArgs += ("-TemplateFile", $NetworkTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-dv\EMJU.Network.param.qa1.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Network.param.qa1.json")
 $invokeArgs += $subscriptionArgs
 Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
