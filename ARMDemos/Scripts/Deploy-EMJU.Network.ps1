@@ -33,7 +33,7 @@ $TemplateParametersFile = [System.IO.Path]::Combine($PSScriptRoot, $TemplatePara
 
 #Login-AzureRmAccount
 
-Set-AzureRmContext -SubscriptionId $SubscriptionID -SubscriptionName $SubscriptionName -TenantId $TenantID
+Set-AzureRmContext -SubscriptionId $SubscriptionID -TenantId $TenantID -SubscriptionName $SubscriptionName
 
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `

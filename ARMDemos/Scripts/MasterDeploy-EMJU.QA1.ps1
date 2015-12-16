@@ -22,7 +22,8 @@ $subscriptionArgs += ("-SubscriptionID",$subscriptionID)
 $subscriptionArgs += ("-SubscriptionName",$subscriptionName)
 $subscriptionArgs += ("-TenantID",$tenantID)
 
-Set-AzureRmContext -SubscriptionId $subscriptionID -TenantId $tenantID -SubscriptionName $subscriptionName 
+Set-AzureRmContext -SubscriptionId $subscriptionID -TenantId $tenantID 
+#-Subscription $subscriptionName 
 
 #Network
 $invokeArgs = @()
