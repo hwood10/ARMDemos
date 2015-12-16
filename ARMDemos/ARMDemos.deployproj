@@ -73,7 +73,7 @@
     <Content Include="Templates\EMJU.SFTP-VMs.json" />
     <Content Include="Templates\EMJU.Network.json" />
     <Content Include="Templates\EMJU.SSH-VMs.json" />
-    <None Include="Scripts\MasterDeploy-EMJU - QA1.ps1" />
+    <None Include="Scripts\MasterDeploy-EMJU.QA1.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.QA.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.DV.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.Development.ps1" />
