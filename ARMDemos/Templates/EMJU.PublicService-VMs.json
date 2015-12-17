@@ -392,13 +392,14 @@
             "publisher": "Microsoft.OSTCExtensions",
             "type": "CustomScriptForLinux",
             "typeHandlerVersion": "1.2",
-            "settings": {
-                "fileUris": [
-                  "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]",
-                  "[concat(parameters('postInstallScriptUrl'), parameters('playBinaryPackage'))]"
-                ],
-                "commandToExecute": "[concat('bash ', parameters('postInstallScript'))]"
-            }
+          "settings": {
+            "fileUris": [
+              "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]",
+              "[concat(parameters('postInstallScriptUrl'), parameters('playBinaryPackage'))]"
+            ],
+            "commandToExecute": "[concat('bash ', parameters('postInstallScript'))]",
+            "timestamp": "(Get-Date).Ticks"
+          }
         }
     }
   ]

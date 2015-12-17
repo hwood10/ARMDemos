@@ -150,7 +150,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Lite-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-Lite.param.pf.json")
 $invokeArgs += $subscriptionArgs
-#Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
+Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
 
 #OfferSetup
 $invokeArgs = @()
