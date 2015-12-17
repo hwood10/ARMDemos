@@ -168,11 +168,11 @@
       }
     },
     "postInstallScriptUrl": {
-        "type": "string",
-        "defaultValue": "https://emjuazpfresources.blob.core.windows.net/playvmresources/",
-        "metadata": {
-            "description": "Post install scripts directory"
-        }
+      "type": "string",
+      "defaultValue": "https://github.com/",
+      "metadata": {
+        "description": "Post install scripts directory"
+      }
     },
     "postInstallScript": {
         "type": "string",

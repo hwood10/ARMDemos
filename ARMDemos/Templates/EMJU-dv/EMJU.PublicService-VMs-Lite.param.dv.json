@@ -9,10 +9,10 @@
     "value": "EMJU-VNet"
   },
   "NSGName": {
-    "value": "CoreServices"
+    "value": "Lite"
   },
   "newStorageAccountName": {
-    "value": "emjuazdv2coreservicesvms"
+    "value": "emjuazdv2litevms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
-    "value": "emjuazdv2coreservices"
+    "value": "emjuazdv2lite"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -36,19 +36,19 @@
     "value": "Standard_A2"
   },
   "vmNamePrefix": {
-    "value": "CoreServices-VM"
+    "value": "Lite-VM"
   },
   "osDiskNamePrefix": {
     "value": "osdisk"
   },
   "nicNamePrefix": {
-    "value": "CoreServices-NIC"
+    "value": "Lite-NIC"
   },
   "PublicIPAddressName": {
-    "value": "CoreServices-PIP"
+    "value": "Lite-PIP"
   },
   "loadBalancerName": {
-    "value": "CoreServices-LB"
+    "value": "Lite-LB"
   },
   "loadBalancerSubnet": {
     "value": "AppGateways"
@@ -69,7 +69,7 @@
     "value": "Standard_Medium"
     },
   "availabilitySetName": {
-    "value": "CoreServices-AVS"
+    "value": "Lite-AVS"
   }
 }
 

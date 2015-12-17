@@ -3,16 +3,16 @@
     "value": "West US"
   },
   "virtualNetworkResourceGroup": {
-    "value": "EMJU-AZDV2-Network"
+    "value": "EMJU-AZQA1-Network"
   },
   "virtualNetworkName": {
     "value": "EMJU-VNet"
   },
   "NSGName": {
-    "value": "PartnerClipping"
+    "value": "ClipEventProcessing"
   },
   "newStorageAccountName": {
-    "value": "emjuazdv2prtnclipvms"
+    "value": "emjuazqa1clipeventvms"
   },
   "storageAccountType": {
     "value": "Standard_GRS"
@@ -24,7 +24,7 @@
     "value": "s@f3W@yEmJU"
   },
   "dnsNameForPublicIP": {
-    "value": "emjuazdv2prtnclip"
+    "value": "emjuazqa1clipeventprocessing"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -36,40 +36,49 @@
     "value": "Standard_A2"
   },
   "vmNamePrefix": {
-    "value": "PartnerClipping-VM"
+    "value": "ClipEventProcessing-VM"
   },
   "osDiskNamePrefix": {
     "value": "osdisk"
   },
   "nicNamePrefix": {
-    "value": "PartnerClipping-NIC"
+    "value": "ClipEventProcessing-NIC"
   },
   "PublicIPAddressName": {
-    "value": "PartnerClipping-PIP"
+    "value": "ClipEventProcessing-PIP"
   },
-  "loadbalancerGatewayName": {
-    "value": "PartnerClipping-AG"
+  "loadBalancerName": {
+    "value": "ClipEventProcessing-LB"
   },
-  "loadbalancerGatewaySubnet": {
+  "loadBalancerSubnet": {
     "value": "AppGateways"
   },
-  "loadbalancerGatewayFrontEndPort": {
+  "loadBalancerFrontEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewayBackEndAddressPrefix": {
-    "value": "10.0.12."
+  "loadBalancerBackEndAddressPrefix": {
+    "value": "10.0.20."
   },
-  "loadbalancerGatewayBaseIP": {
+  "loadBalancerBaseIP": {
     "value":  4
   },
-  "loadbalancerGatewayBackEndPort": {
+  "loadBalancerBackEndPort": {
     "value": 9000
   },
-  "loadbalancerGatewaySkuName": {
+  "loadBalancerSkuName": {
     "value": "Standard_Medium"
     },
   "availabilitySetName": {
-    "value": "PartnerClipping-AVS"
+    "value": "ClipEventProcessing-AVS"
+  },
+  "postInstallScriptUrl": {
+      "value": "https://emjuazpfresources.blob.core.windows.net/playvmresources/"
+  },
+  "postInstallScript": {
+    "value": "PlayServerInstall.sh"
+  },
+  "playBinaryPackage": {
+      "value": "ClipEventProcessingBinary.txt"
   }
 }
 

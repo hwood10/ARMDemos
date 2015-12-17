@@ -2,15 +2,18 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName = 'EMJU-AZDV-PARTNERCLIPPING-VMs',  
+  [string] $ResourceGroupName,   
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
   [string] $StorageAccountResourceGroupName, 
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile = '..\Templates\EMJU.PublicService-Gateway.json',
-  [string] $TemplateParametersFile = '..\Templates\EMJU.PublicService-Gateway-PartnerClipping.param.dev.json',
+  [string] $TemplateFile, 
+  [string] $TemplateParametersFile,
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
-  [string] $AzCopyPath = '..\Tools\AzCopy.exe'
+  [string] $AzCopyPath = '..\Tools\AzCopy.exe',
+  [string] [Parameter(Mandatory=$true)] $SubscriptionID,
+  [string] [Parameter(Mandatory=$true)] $SubscriptionName,
+  [string] [Parameter(Mandatory=$true)] $TenantID
 )
 
 
@@ -28,9 +31,7 @@ $TemplateParametersFile = [System.IO.Path]::Combine($PSScriptRoot, $TemplatePara
 
 # Create or update the resource group using the specified template file and template parameters file
 
-#Login-AzureRmAccount
-
-Set-AzureRmContext -SubscriptionId $SubscriptionID -SubscriptionName $SubscriptionName -TenantId $TenantID
+#Set-AzureRmContext -SubscriptionId $SubscriptionID -SubscriptionName $SubscriptionName -TenantId $TenantID
 
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `
