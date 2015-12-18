@@ -37,6 +37,8 @@
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.HDInsight-VMs.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.FileShare-Storage.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Lite-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Management-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.RdpJump-VMs.ps1" />
@@ -74,12 +76,15 @@
     <Content Include="Templates\EMJU.SFTP-VMs.json" />
     <Content Include="Templates\EMJU.Network.json" />
     <Content Include="Templates\EMJU.SSH-VMs.json" />
-    <None Include="Resources\Scripts\PlayServerInstall.sh" />
     <None Include="Scripts\MasterDeploy-EMJU.QA1.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.QA.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.DV.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.Development.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.Perf.ps1" />
+    <None Include="Templates\EMJU-qa1\EMJU.HDInsight-VMs.param.qa1.json" />
+    <None Include="Templates\EMJU.HDInsight-VMs.json" />
+    <None Include="Templates\EMJU-qa1\EMJU.FileShare-Storage.param.qa1.json" />
+    <None Include="Templates\EMJU.FileShare-Storage.json" />
     <None Include="Templates\Demo\Demo-Network-Core.param.dev.json" />
     <None Include="Templates\Demo\Demo-Network.param.dev.json" />
     <None Include="Templates\Demo\Demo-VMs-Data.param.dev.json" />
@@ -229,4 +234,9 @@
     </None>
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Templates_4EMJU_1HDInsight-VMs_1json__JSONSchema="http://json.schemastore.org/sarif" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

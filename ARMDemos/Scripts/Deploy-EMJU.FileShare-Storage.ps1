@@ -1,4 +1,4 @@
-#Requires -Version 3.0
+﻿#Requires -Version 3.0
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
@@ -31,7 +31,7 @@ $TemplateParametersFile = [System.IO.Path]::Combine($PSScriptRoot, $TemplatePara
 
 # Create or update the resource group using the specified template file and template parameters file
 
-Set-AzureRmContext -SubscriptionId $SubscriptionID -SubscriptionName $SubscriptionName -TenantId $TenantID
+Set-AzureRmContext -SubscriptionId $SubscriptionID -TenantId $TenantID # -SubscriptionName $SubscriptionName
 
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `

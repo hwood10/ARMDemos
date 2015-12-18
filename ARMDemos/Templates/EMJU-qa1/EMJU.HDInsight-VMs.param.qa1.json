@@ -1,0 +1,57 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "West US"
+    },
+    "clusterName": {
+      "value": "hdi-qa1-cluster"
+    },
+    "clusterVersion": {
+      "value": "3.3"
+    },
+    "headNodeSize": {
+      "value": "Standard_D13"
+    },
+    "workerNodeSize": {
+      "value": "Standard_D13"
+    },
+    "workerNodeCount": {
+      "value": 6
+    },
+    "storageAccountResourceGroup": {
+      "value": "EMJU-AZQA1-HDI"
+    },
+    "clusterStorageAccountName": {
+      "value": "emjuazqa1storage"
+    },
+    "storageAccountType": {
+      "value": "Standard_GRS"
+    },
+    "clusterStorageContainerName": {
+      "value": "hdi-container"
+    },
+    "virtualNetworkResourceGroup": {
+      "value": "EMJU-AZQA1-Network"
+    },
+    "virtualNetworkName": {
+      "value": "EMJU-VNet"
+    },
+    "virtualNetworkSubnetName": {
+      "value": "Data"
+    },
+    "clusterLoginUserName": {
+      "value": "admin"
+    },
+    "clusterLoginPassword": {
+      "value": "Had00p!234"
+    },
+    "sshUserName": {
+      "value": "hadmin"
+    },
+    "sshPassword": {
+      "value": "Int3grat!on"
+    }
+  }
+}

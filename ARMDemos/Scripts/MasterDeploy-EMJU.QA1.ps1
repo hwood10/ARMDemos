@@ -13,6 +13,8 @@ $NetworkTemplate = "..\Templates\EMJU.Network.json"
 $SSHBastionTemplate ="..\Templates\EMJU.SSH-VMs.json"
 $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
+$FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
+$HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
 
@@ -59,6 +61,18 @@ $invokeArgs += ("-TemplateFile", $SSHBastionTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.SSH-VMs.param.qa1.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.SSH-VMs.ps1 $invokeArgs"
+
+###############################
+##FileSharing
+###############################
+
+##FILESHARE
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-FILESHARE")
+$invokeArgs += ("-TemplateFile", $FileSharingTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.FileShare-Storage.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.FileShare-Storage.ps1 $invokeArgs"
 
 ###############################
 ##Public Services
@@ -219,3 +233,11 @@ $invokeArgs += $subscriptionArgs
 ###############################
 ##HDInsight
 ###############################
+
+##HDInsight
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU_AZQA1_HDI")
+$invokeArgs += ("-TemplateFile", $HDInsightTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.HDInsight-VMs.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.HDInsight-VMs.ps1 $invokeArgs"
