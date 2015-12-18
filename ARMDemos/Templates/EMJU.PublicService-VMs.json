@@ -183,7 +183,7 @@
     },
     "playBinaryPackage": {
         "type": "string",
-        "defaultValue": "binaryPackage.bin",
+        "defaultValue": "ClipEventProcessingBinary.txt",
         "metadata": {
             "description": "Post install script"
         }
