@@ -22,3 +22,5 @@ echo 'PATH=/mnt/typesafe-activator/activator-dist-1.3.6:$PATH' >> /home/safewaya
 cd /mnt/typesafe-activator/activator-dist-1.3.6
 sudo chmod 777 activator
 
+#install the binary
+#start activator in forever mode
