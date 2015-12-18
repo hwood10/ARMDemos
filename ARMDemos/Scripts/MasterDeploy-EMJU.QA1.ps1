@@ -236,7 +236,7 @@ $invokeArgs += $subscriptionArgs
 
 ##HDInsight
 $invokeArgs = @()
-$invokeArgs += ("-ResourceGroupName","EMJU_AZQA1_HDI")
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-HDI")
 $invokeArgs += ("-TemplateFile", $HDInsightTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.HDInsight-VMs.param.qa1.json")
 $invokeArgs += $subscriptionArgs
