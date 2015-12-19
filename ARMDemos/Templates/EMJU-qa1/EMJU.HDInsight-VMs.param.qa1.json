@@ -18,7 +18,7 @@
       "value": "Standard_D13"
     },
     "workerNodeCount": {
-      "value": 6
+      "value": 4
     },
     "storageAccountResourceGroup": {
       "value": "EMJU-AZQA1-HDI"
