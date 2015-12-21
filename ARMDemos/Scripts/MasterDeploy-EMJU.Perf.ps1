@@ -13,6 +13,8 @@ $NetworkTemplate = "..\Templates\EMJU.Network.json"
 $SSHBastionTemplate ="..\Templates\EMJU.SSH-VMs.json"
 $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
+$FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
+$HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
 
@@ -60,6 +62,18 @@ $invokeArgs += ("-TemplateFile", $SSHBastionTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.SSH-VMs.param.pf.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.SSH-VMs.ps1 $invokeArgs"
+
+###############################
+##FileSharing
+###############################
+
+##FILESHARE
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-FILESHARE")
+$invokeArgs += ("-TemplateFile", $FileSharingTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.FileShare-Storage.param.pf.json")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.FileShare-Storage.ps1 $invokeArgs"
 
 ##############################
 #Public Services
@@ -150,7 +164,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Lite-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.PublicService-VMs-Lite.param.pf.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
 
 #OfferSetup
 $invokeArgs = @()
@@ -220,3 +234,9 @@ $invokeArgs += $subscriptionArgs
 ###############################
 ##HDInsight
 ###############################
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-HDI")
+$invokeArgs += ("-TemplateFile", $HDInsightTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.HDInsight-VMs.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-VMs.ps1 $invokeArgs"

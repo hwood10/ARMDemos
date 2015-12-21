@@ -15,7 +15,7 @@
       "type": "string",
       "defaultValue": "Standard_D12",
       "allowedValues": [
-		"Standard_D3",
+        "Standard_D3",
         "Standard_D12",
         "Standard_D13",
         "Standard_D14",
@@ -49,7 +49,6 @@
     },
     "templateBaseUrl": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/rraju03/azure-resource-manager-dse/master/simple/",
       "metadata": {
         "description": "Base url for all deployment templates"
       }
@@ -96,13 +95,13 @@
         "description": "IP for opsCenter"
       }
     },
-	"namespace": {
-	  "type": "string",
+    "namespace": {
+      "type": "string",
       "defaultValue": "test",
       "metadata": {
         "description": "Starting name of VMs"
-	  }
-	}
+      }
+    }
   },
   "variables": {
     "clusterName": "[parameters('clusterName')]",

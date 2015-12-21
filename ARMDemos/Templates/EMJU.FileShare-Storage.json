@@ -26,6 +26,30 @@
       "metadata": {
         "description": "Storage Account type"
       }
+    },
+    "ftpFileShareName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the File Shared for SFTP VM"
+      }
+    },
+    "ftpFileShareQuota": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the File Shared for SFTP VM"
+      }
+    },
+    "installStorageShareName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the File Shared for SFTP VM"
+      }
+    },
+    "installStorageShareQuota": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the File Shared for SFTP VM"
+      }
     }
   },
   "variables": {
@@ -42,5 +66,31 @@
         "accountType": "[parameters('storageAccountType')]"
       }
     }
-  ]
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "value": "[parameters('newStorageAccountName')]",
+      "type": "string"
+    },
+    "storageAccountKey": {
+      "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('newStorageAccountName')), '2015-05-01-preview').key1]",
+      "type": "string"
+    },
+    "ftpFileShareName": {
+      "value": "[parameters('ftpFileShareName')]",
+      "type": "string"
+    },
+    "ftpFileShareQuota": {
+      "value": "[parameters('ftpFileShareQuota')]",
+      "type": "string"
+    },
+    "installStorageShareName": {
+      "value": "[parameters('installStorageShareName')]",
+      "type": "string"
+    },
+    "installStorageShareQuota": {
+      "value": "[parameters('installStorageShareQuota')]",
+      "type": "string"
+    }
+  }
 }

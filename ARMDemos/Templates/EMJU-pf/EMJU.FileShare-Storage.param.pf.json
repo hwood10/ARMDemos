@@ -6,19 +6,19 @@
       "value": "West US"
     },
     "newStorageAccountName": {
-      "value": "emjuazqa1share"
+      "value": "emjuazpfshare"
     },
     "storageAccountType": {
       "value": "Standard_GRS"
     },
     "ftpFileShareName": {
-      "value": "emjuazqa1ftpfiles"
+      "value": "emjuazpfftpfiles"
     },
     "ftpFileShareQuota": {
       "value": "1024"
     },
     "installStorageShareName": {
-      "value": "emjuazqa1installscripts"
+      "value": "emjuazpfinstallscripts"
     },
     "installStorageShareQuota": {
       "value": "1"

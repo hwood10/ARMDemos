@@ -15,16 +15,16 @@
     "value": "rich1"
   },
   "templateBaseUrl": {
-    "value": "https://raw.githubusercontent.com/rraju03/AzureTest/master/"
+    "value": "https://emjuazqa1share.blob.core.windows.net/emjuazqa1installscripts/"
   },
   "nodesTemplateFile": {
-    "value": "DSE-nodesTemplate.json"
+    "value": "EMJU.DSE-Nodes.json"
   },
   "opsCenterTemplateFile": {
-    "value": "DSE-opscenterTemplate.json"
+    "value": "EMJU.DSE-OpsCenterVMs.json"
   },
   "opsCenterInstallTemplateFile": {
-    "value": "DSE-opscenterInstallTemplate.json"
+    "value": "EMJU.DSE-OpsCenterInstall.json"
   },
   "clusterIPRangeBase": {
     "value": "10.0.200."

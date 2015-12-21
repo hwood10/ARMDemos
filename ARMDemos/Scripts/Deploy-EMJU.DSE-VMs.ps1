@@ -17,7 +17,7 @@ Param(
 )
 
 
-Import-Module Azure -ErrorAction SilentlyContinue
+#Import-Module Azure -ErrorAction SilentlyContinue
 
 try {
   [Microsoft.Azure.Common.Authentication.AzureSession]::ClientFactory.AddUserAgent("VSAzureTools-$UI$($host.name)".replace(" ","_"), "2.7")
@@ -36,30 +36,9 @@ Set-AzureRmContext -SubscriptionId $SubscriptionID -TenantId $TenantID # -Subscr
 New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `
 
-$OutputValues = New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName `
+New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName `
                        -Location $ResourceGroupLocation `
                        -TemplateFile $TemplateFile `
                        -TemplateParameterFile $TemplateParametersFile `
                         @OptionalParameters `
                         -Force -Verbose
-
-# create a context for account and key
-$ctx = New-AzureStorageContext -StorageAccountName $OutputValues.Outputs.storageAccountName.value -StorageAccountKey $OutputValues.Outputs.storageAccountKey.value
-
-# create a new share
-$fileshare = New-AzureStorageShare $OutputValues.Outputs.ftpFileShareName.value -Context $ctx 
-Set-AzureStorageShareQuota -Share $fileshare -Quota $OutputValues.Outputs.ftpFileShareQuota.value
-
-# create a directory in the share
-New-AzureStorageDirectory -ShareName $OutputValues.Outputs.ftpFileShareName.value -Context $ctx -Path "/apps"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input/transfer"
-
-# create a new container
-$containershare = New-AzureStorageContainer $OutputValues.Outputs.installStorageShareName.value -Context $ctx -Permission Off
-
-Get-ChildItem –Path ..\Extension_Scripts\* | Set-AzureStorageBlobContent -Container $OutputValues.Outputs.installStorageShareName.value -Context $ctx
