@@ -17,6 +17,18 @@
     "namespace": {
       "type": "string"
     },
+    "faultDomains": {
+      "type": "int",
+      "metadata": {
+        "description": "The number of fault domains for data center"
+      }
+    },
+    "updateDomains": {
+      "type": "int",
+      "metadata": {
+        "description": "The number of update domains for data center"
+      }
+    },
     "osSettings": {
       "type": "object"
     },
@@ -26,17 +38,26 @@
     "dnsName": {
       "type": "string"
     },
+    "virtualNetworkResourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "This is your Virtual Network's resource Group"
+      }
+    },
     "vnetName": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "This is your Virtual Network"
+      }
     },
     "subnetName": {
       "type": "string"
     }
   },
   "variables": {
-    "vnetID" : "[resourceId('EMJU-AZDV-Network','Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
-	"subnetName" : "[concat(variables('vnetID'),'/subnets/','Data')]",
-    "publicIpName": "[concat(parameters('namespace'), 'PublicIp')]",
+    "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
+    "subnetName": "[concat(variables('vnetID'),'/subnets/','Data')]",
+    "publicIpName": "[concat(parameters('dnsName'), 'PublicIp')]",
     "publicIpRef": "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIpName'))]",
     "securityGroupName": "[concat(parameters('namespace'), 'nsg')]"
   },
@@ -111,8 +132,8 @@
       "name": "[concat(parameters('namespace'), 'set')]",
       "location": "[parameters('region')]",
       "properties": {
-        "platformFaultDomainCount": 3,
-        "platformUpdateDomainCount": 18
+        "platformFaultDomainCount": "[parameters('faultDomains')]",
+        "platformUpdateDomainCount": "[parameters('updateDomains')]"
       }
     },
     {
@@ -148,7 +169,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[concat(parameters('namespace'), 'vm')]",
+      "name": "[concat(parameters('dnsName'), 'vm')]",
       "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', parameters('namespace'), 'nic')]"

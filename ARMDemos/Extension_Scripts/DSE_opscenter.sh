@@ -112,10 +112,10 @@ get_node_fingerprints() {
 #
 
 echo "Getting node information"
-export NODE_INFORMATION_API=$(get_node_information "cassandra" "10.0.200.10-6" "1") # TODO: Get these args from external JSON
+export NODE_INFORMATION_API=$(get_node_information "solr" "10.0.200.10-6" "1") # TODO: Get these args from external JSON
 
 echo "Getting node information"
-export NODE_INFORMATION_ANALYTICS=$(get_node_information "solr" "10.0.200.16-4" "1")  # TODO: Get these args from external JSON
+export NODE_INFORMATION_ANALYTICS=$(get_node_information "hadoop" "10.0.200.16-4" "1")  # TODO: Get these args from external JSON
 
 
 if [ $testing == 'true' ] ; then 
@@ -153,13 +153,13 @@ sudo tee provision.json > /dev/null <<EOF
     "request_scheduler" : "org.apache.cassandra.scheduler.NoScheduler",
     "cas_contention_timeout_in_ms" : 1000,
     "memtable_heap_space_in_mb" : 2048,
-    "concurrent_reads" : 32,
+    "concurrent_reads" : 128,
     "max_hint_window_in_ms" : 10800000,
     "start_native_transport" : true,
     "row_cache_save_period" : 0,
     "auto_snapshot" : true,
     "counter_cache_save_period" : 7200,
-    "read_request_timeout_in_ms" : 5000,
+    "read_request_timeout_in_ms" : 20000,
     "saved_caches_directory" : "/mnt/saved_caches",
     "trickle_fsync_interval_in_kb" : 10240,
     "data_file_directories" : [
@@ -175,8 +175,8 @@ sudo tee provision.json > /dev/null <<EOF
     "index_summary_resize_interval_in_minutes" : 60,
     "row_cache_size_in_mb" : 0,
     "sstable_preemptive_open_interval_in_mb" : 50,
-    "compaction_throughput_mb_per_sec" : 16,
-    "request_timeout_in_ms" : 10000,
+    "compaction_throughput_mb_per_sec" : 32,
+    "request_timeout_in_ms" : 20000,
     "internode_compression" : "dc",
     "batchlog_replay_throttle_in_kb" : 1024,
     "disk_failure_policy" : "stop",
@@ -186,7 +186,7 @@ sudo tee provision.json > /dev/null <<EOF
     "dynamic_snitch_badness_threshold" : 0.1,
     "trickle_fsync" : false,
     "commitlog_sync" : "periodic",
-    "concurrent_writes" : 32,
+    "concurrent_writes" : 512,
     "stream_throughput_outbound_megabits_per_sec" : 200,
     "max_hints_delivery_threads" : 2,
     "hinted_handoff_enabled" : "true",
@@ -216,15 +216,15 @@ sudo tee provision.json > /dev/null <<EOF
     "storage_port" : 7000,
     "commitlog_segment_size_in_mb" : 32,
     "native_transport_max_frame_size_in_mb" : 256,
-    "commitlog_directory" : "/mnt/commitlog",
+    "commitlog_directory" : "/mnt/commitlogs",
     "batch_size_warn_threshold_in_kb" : 64,
     "inter_dc_tcp_nodelay" : false,
     "snapshot_before_compaction" : false,
     "thrift_framed_transport_size_in_mb" : 15,
-    "write_request_timeout_in_ms" : 2000,
-    "range_request_timeout_in_ms" : 10000,
+    "write_request_timeout_in_ms" : 20000,
+    "range_request_timeout_in_ms" : 20000,
     "memtable_offheap_space_in_mb" : 2048,
-    "cluster_name" : "rich1",
+    "cluster_name" : "emju-qa1",
     "server_encryption_options" : {
       "keystore_password" : "cassandra",
       "algorithm" : "SunX509",

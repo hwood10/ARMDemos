@@ -7,7 +7,7 @@ apt-get -y update
 apt-get -y install zulu-8
 
 echo "Partitioning and formatting all attached data disks"
-bash vm-disk-utils-0.1.sh
+bash DSE_vm-disk-utils-0.1.sh
 
 echo "Modifying permissions"
 chmod 777 /mnt
