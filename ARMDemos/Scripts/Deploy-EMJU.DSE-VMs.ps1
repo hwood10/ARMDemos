@@ -37,7 +37,6 @@ New-AzureRmResourceGroup -Name $ResourceGroupName `
                        -Location $ResourceGroupLocation `
 
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName `
-                       -Location $ResourceGroupLocation `
                        -TemplateFile $TemplateFile `
                        -TemplateParameterFile $TemplateParametersFile `
                         @OptionalParameters `

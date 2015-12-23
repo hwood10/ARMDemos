@@ -20,6 +20,18 @@
     "vmSize": {
       "type": "string"
     },
+    "faultDomains": {
+      "type": "int",
+      "metadata": {
+        "description": "The number of fault domains for data center"
+      }
+    },
+    "updateDomains": {
+      "type": "int",
+      "metadata": {
+        "description": "The number of update domains for data center"
+      }
+    },
     "osSettings": {
       "type": "object"
     },
@@ -30,15 +42,24 @@
       "type": "object"
     },
     "vnetName": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "This is your Virtual Network"
+      }
+    },
+    "virtualNetworkResourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "This is your Virtual Network's resource Group"
+      }
     },
     "subnetName": {
       "type": "string"
     }
   },
   "variables": {
-    "vnetID" : "[resourceId('EMJU-AZDV-Network','Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
-	"subnetName" : "[concat(variables('vnetID'),'/subnets/','Data')]",
+    "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
+    "subnetName": "[concat(variables('vnetID'),'/subnets/','Data')]",
     "vmName": "[concat(parameters('namespace'), 'vm')]"
   },
   "resources": [
@@ -48,8 +69,8 @@
       "name": "[concat(parameters('namespace'), 'set')]",
       "location": "[parameters('region')]",
       "properties": {
-        "platformFaultDomainCount": 3,
-        "platformUpdateDomainCount": 18
+        "platformFaultDomainCount": "[parameters('faultDomains')]",
+        "platformUpdateDomainCount": "[parameters('updateDomains')]"
       }
     },
     {
@@ -150,7 +171,7 @@
         "typeHandlerVersion": "1.2",
         "settings": {
           "fileUris": "[parameters('osSettings').scripts]",
-          "commandToExecute": "bash dseNode.sh"
+          "commandToExecute": "bash DSE_dseNode.sh"
         }
       }
     }
