@@ -82,6 +82,8 @@
     <None Include="Extension_Scripts\PlayServerInstall.sh" />
     <None Include="Extension_Scripts\SFTPServerInstall.sh" />
     <None Include="Extension_Scripts\WebServerInstall.sh" />
+    <None Include="Scripts\Deploy-EMJU.DSE-VMs.ps1" />
+    <None Include="Scripts\Deploy-EMJU.Redis-Cache.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.QA1.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.QA.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.DV.ps1" />
@@ -93,6 +95,7 @@
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
     <None Include="Templates\EMJU-pf\EMJU.FileShare-Storage.param.pf.json" />
     <None Include="Templates\EMJU-qa1\EMJU.DSE-Stack.param.qa1.json" />
+    <None Include="Templates\EMJU-qa1\EMJU.Redis-Cache.param.qa1.json" />
     <None Include="Templates\EMJU.DSE-OpsCenterVMs.json" />
     <None Include="Templates\EMJU.DSE-OpsCenterInstall.json" />
     <None Include="Templates\EMJU.DSE-Nodes.json" />
@@ -199,6 +202,7 @@
     <None Include="Templates\EMJU-pf\EMJU.RdpJump-VMs.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.SFTP-VMs.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.SSH-VMs.param.pf.json" />
+    <None Include="Templates\EMJU.Redis-Cache.json" />
     <None Include="Templates\J4UDevelopment\EMJU.PublicService-VMs-Lite.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.Network.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.PrivateService-VMs-Management.param.dev.json" />
