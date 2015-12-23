@@ -76,6 +76,12 @@
     <Content Include="Templates\EMJU.SFTP-VMs.json" />
     <Content Include="Templates\EMJU.Network.json" />
     <Content Include="Templates\EMJU.SSH-VMs.json" />
+    <None Include="Extension_Scripts\DSE_dseNode.sh" />
+    <None Include="Extension_Scripts\DSE_opscenter.sh" />
+    <None Include="Extension_Scripts\DSE_vm-disk-utils-0.1.sh" />
+    <None Include="Extension_Scripts\PlayServerInstall.sh" />
+    <None Include="Extension_Scripts\SFTPServerInstall.sh" />
+    <None Include="Extension_Scripts\WebServerInstall.sh" />
     <None Include="Scripts\MasterDeploy-EMJU.QA1.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.QA.ps1" />
     <None Include="Scripts\MasterDeploy-EMJU.DV.ps1" />
@@ -217,9 +223,6 @@
     <None Include="Templates\J4UDevelopment\EMJU.SFTP-VMs.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.SSH-VMs.param.dev.json" />
     <None Include="Templates\opscentor.json" />
-    <None Include="VM Install Scripts\SFTPServerInstall.sh" />
-    <None Include="VM Install Scripts\PlayServerInstall.sh" />
-    <None Include="VM Install Scripts\WebServerInstall.sh" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tools\AzCopy.exe" />
@@ -242,7 +245,7 @@
   <Target Name="GetReferenceAssemblyPaths" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Templates_4EMJU_1HDInsight-VMs_1json__JSONSchema="http://json.schemastore.org/sarif" />
+      <UserProperties />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
