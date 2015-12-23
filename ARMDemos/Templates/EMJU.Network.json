@@ -1722,7 +1722,21 @@
               "priority": 3000,
               "direction": "Inbound"
             }
-          }
+          },
+          {
+            "name": "Allow_https_from_rdp_inbound",
+            "properties": {
+              "description": "Allow https from rdp",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "[parameters('RdpJumpSubnetPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 4000,
+              "direction": "Inbound"
+            }
+          },
         ]
       }
     },

@@ -33,7 +33,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-Network")
 $invokeArgs += ("-TemplateFile", $NetworkTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.Network.param.pf.json")
 $invokeArgs += $subscriptionArgs
-#Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
+Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
 ###############################
 #Admin VMs
@@ -73,7 +73,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-FILESHARE")
 $invokeArgs += ("-TemplateFile", $FileSharingTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.FileShare-Storage.param.pf.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.FileShare-Storage.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.FileShare-Storage.ps1 $invokeArgs"
 
 ##############################
 #Public Services
