@@ -15,6 +15,7 @@ $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
 $FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
 $RedisCacheTemplate = "..\Templates\EMJU.Redis-Cache.json"
+$ServiceBusTemplate = "..\Templates\EMJU.ServiceBus-PAAS.json"
 $DSETemplate = "..\Templates\EMJU.DSE-Stack.json"
 $HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
@@ -29,12 +30,12 @@ $subscriptionArgs += ("-TenantID",$tenantID)
 Set-AzureRmContext -SubscriptionId $subscriptionID -TenantId $tenantID #-SubscriptionName $subscriptionName
 
 #Network
-#$invokeArgs = @()
-#$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-Network")
-#$invokeArgs += ("-TemplateFile", $NetworkTemplate)
-#$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Network.param.qa1.json")
-#$invokeArgs += $subscriptionArgs
-#Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-Network")
+$invokeArgs += ("-TemplateFile", $NetworkTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Network.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
 ###############################
 #Admin VMs
@@ -87,6 +88,14 @@ $invokeArgs += ("-TemplateFile", $RedisCacheTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Redis-Cache.param.qa1.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.Redis-Cache.ps1 $invokeArgs"
+
+#ServiceBus
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-SERVICEBUS")
+$invokeArgs += ("-TemplateFile", $ServiceBusTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.ServiceBus-PAAS.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.ServiceBus-PAAS.ps1 $invokeArgs"
 
 #Service
 #Storage account for SFTP
@@ -246,7 +255,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-DSE")
 $invokeArgs += ("-TemplateFile", $DSETemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.DSE-Stack.param.qa1.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.DSE-VMs.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.DSE-VMs.ps1 $invokeArgs"
 
 ###############################
 ##HDInsight

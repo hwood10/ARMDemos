@@ -1,4 +1,7 @@
 #!/bin/bash
+
+sudo timedatectl set-timezone MST
+
 sudo apt-get update
 sudo apt-get install python-software-properties
 sudo add-apt-repository -y ppa:webupd8team/java
