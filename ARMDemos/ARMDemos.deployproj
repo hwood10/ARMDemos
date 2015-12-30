@@ -95,6 +95,7 @@
     <None Include="Templates\DSE-nodesTemplate.json" />
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
     <None Include="Templates\EMJU-pf\EMJU.FileShare-Storage.param.pf.json" />
+    <None Include="Templates\EMJU-pf\EMJU.Redis-Cache.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.ServiceBus-PAAS.param.pf.json" />
     <None Include="Templates\EMJU-qa1\EMJU.ServiceBus-PAAS.param.qa1.json" />
     <None Include="Templates\EMJU-qa1\EMJU.DSE-Stack.param.qa1.json" />
