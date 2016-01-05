@@ -23,8 +23,8 @@
   "adminPassword": {
     "value": "s@f3W@yEmJU"
   },
-  "dnsNameForPublicIP": {
-    "value": "emjuazqa1managementmobile"
+  "dnsNameForPrivateIP": {
+    "value": "emjuazqa1managementvms"
   },
   "ubuntuOSVersion": {
     "value": "14.04.2-LTS"
@@ -44,6 +44,9 @@
   "nicNamePrefix": {
     "value": "Management-NIC"
   },
+  "PrivateIPAddressName": {
+    "value": "Management-PIP"
+  },
   "loadBalancerName": {
     "value": "Management-LB"
   },
@@ -57,16 +60,19 @@
     "value": "10.0.101."
   },
   "loadBalancerBaseIP": {
-    "value":  4
+    "value": 4
   },
   "loadBalancerBackEndPort": {
     "value": 9000
   },
   "loadBalancerSkuName": {
     "value": "Standard_Medium"
-    },
+  },
   "availabilitySetName": {
     "value": "Management-AVS"
+  },
+  "postInstallScriptUrl": {
+    "value": "https://emjuazqa1share.blob.core.windows.net/emjuazqa1installscripts/"
   }
 }
 

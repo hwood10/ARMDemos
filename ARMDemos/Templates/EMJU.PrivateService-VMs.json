@@ -51,10 +51,10 @@
         "description": "Password for the Virtual Machine."
       }
     },
-    "dnsNameForPublicIP": {
+    "dnsNameForPrivateIP": {
       "type": "string",
       "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+        "description": "Unique DNS Name for the Private IP used to access the Virtual Machine."
       }
     },
     "ubuntuOSVersion": {
@@ -105,6 +105,12 @@
       "type": "string",
       "metadata": {
         "description": "This is the name of your ssh NIC"
+      }
+    },
+    "PrivateIPAddressName": {
+      "type": "string",
+      "metadata": {
+        "description": "This is the name of your VM set private address"
       }
     },
     "availabilitySetName": {
@@ -160,6 +166,19 @@
       "metadata": {
         "description": "Sku Name"
       }
+    },
+    "postInstallScriptUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Post install scripts directory"
+      }
+    },
+    "postInstallScript": {
+      "type": "string",
+      "defaultValue": "PlayServerInstall.sh",
+      "metadata": {
+        "description": "Post install script"
+      }
     }
   },
   "variables": {
@@ -202,6 +221,9 @@
             "properties": {
               "subnet": {
                 "id": "[variables('serviceSubnetRef')]"
+              },
+              "dnsSettings": {
+                "domainNameLabel": "[parameters('dnsNameForPrivateIP')]"
               }
             }
           }
@@ -332,6 +354,32 @@
             "enabled": "true",
             "storageUri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net')]"
           }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('vmNamePrefix'),'-', copyindex() , '/postInstallTask')]",
+      "apiVersion": "2015-05-01-preview",
+      "location": "[parameters('location')]",
+      "copy": {
+        "name": "virtualMachineLoop",
+        "count": "[parameters('numberOfInstances')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmNamePrefix'),'-', copyindex())]",
+        "[concat('Microsoft.Network/networkInterfaces/', parameters('nicNamePrefix'),'-', copyindex())]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.OSTCExtensions",
+        "type": "CustomScriptForLinux",
+        "typeHandlerVersion": "1.2",
+        "settings": {
+          "fileUris": [
+            "[concat(parameters('postInstallScriptUrl'), parameters('postInstallScript'))]"
+          ],
+          "commandToExecute": "[concat('bash ', parameters('postInstallScript'))]",
+          "timestamp": "(Get-Date).Ticks"
         }
       }
     }
