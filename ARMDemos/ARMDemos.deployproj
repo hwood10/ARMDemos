@@ -28,6 +28,21 @@
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="API_WADL\Akamai_SureRoute.wadl.xml" />
+    <None Include="API_WADL\Copient_Services.wadl.xml" />
+    <None Include="API_WADL\Coreservices_Admin.wadl.xml" />
+    <None Include="API_WADL\Coreservices_emlsm.wadl.xml" />
+    <None Include="API_WADL\Coreservices.wadl.xml" />
+    <None Include="API_WADL\Customer_Clipping.wadl.xml" />
+    <None Include="API_WADL\Customer_Profile_Lookup.wadl.xml" />
+    <None Include="API_WADL\Gallery_Admin.wadl.xml" />
+    <None Include="API_WADL\Gallery.wadl.xml" />
+    <None Include="API_WADL\MyCard_Admin.wadl.xml" />
+    <None Include="API_WADL\MyCard.wadl.xml" />
+    <None Include="API_WADL\MyList.wadl.xml" />
+    <None Include="API_WADL\MyListPurchaseHistory.wadl.xml" />
+    <None Include="API_WADL\OfferSetup.wadl.xml" />
+    <None Include="API_WADL\Partner_Clipping.wadl.xml" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
@@ -37,6 +52,7 @@
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.APIM-PAAS.ps1" />
     <Content Include="Scripts\Deploy-EMJU.HDInsight-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.FileShare-Storage.ps1" />
     <Content Include="Scripts\Deploy-EMJU.Lite-VMs.ps1" />
@@ -79,6 +95,7 @@
     <None Include="Extension_Scripts\DSE_dseNode.sh" />
     <None Include="Extension_Scripts\DSE_opscenter.sh" />
     <None Include="Extension_Scripts\DSE_vm-disk-utils-0.1.sh" />
+    <None Include="Extension_Scripts\NewRelicInstall.sh" />
     <None Include="Extension_Scripts\PlayServerInstall.sh" />
     <None Include="Extension_Scripts\SFTPServerInstall.sh" />
     <None Include="Extension_Scripts\WebServerInstall.sh" />

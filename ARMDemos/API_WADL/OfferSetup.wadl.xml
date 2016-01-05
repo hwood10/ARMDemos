@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="OfferSetup" />
+  <resources base="http://nimbusqi.azure-api.net/J4UOffers1/services">
+    <resource path="/offer/create">
+      <doc title="Create Offer Service">Based on the given Offer details, this service will create a J4U offer, ready for preview. </doc>
+      <method name="POST">
+        <request />
+      </method>
+    </resource>
+    <resource path="/offer/update">
+      <doc title="Update Offer Service">This service will update an exiting J4U Offer with the Offer details passed in.  The offer passed in is expected to be complete, same requirements as in creating a new offer.</doc>
+      <method name="POST">
+        <request />
+      </method>
+    </resource>
+    <resource path="/offer/deactivate">
+      <doc title="Deactivate Offer Service">This service will deactivate an existing J4U offer. </doc>
+      <method name="POST">
+        <request />
+      </method>
+    </resource>
+    <resource path="/offer/promote">
+      <doc title="Promote Offer Service">This service will promote an offer from preview to production.</doc>
+      <method name="POST">
+        <request />
+      </method>
+    </resource>
+  </resources>
+</application>
