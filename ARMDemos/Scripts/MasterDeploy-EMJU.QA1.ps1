@@ -35,7 +35,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-Network")
 $invokeArgs += ("-TemplateFile", $NetworkTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Network.param.qa1.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.Network.ps1 $invokeArgs"
 
 ###############################
 #Admin VMs
@@ -99,7 +99,13 @@ $invokeArgs += $subscriptionArgs
 
 #Service
 #Storage account for SFTP
+
+
 #API-M when it is available on ARM
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-APIM")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.APIM-PAAS.ps1 $invokeArgs"
 
 
 ###############################
