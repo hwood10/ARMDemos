@@ -11,7 +11,7 @@
     "redisCacheLocation": {
       "type": "string",
       "metadata": {
-        "description": "The location of the Redis Cache. For best perfomance, use the same location as the app to be used with the cache."
+        "description": "The location of the Redis Cache. For best performance, use the same location as the app to be used with the cache."
       }
     },
     "redisCacheSKU": {
@@ -36,31 +36,23 @@
       "type": "int",
       "metadata": {
         "description": "The size of the new Azure Redis Cache instance. "
-      }
+      },
+      "allowedValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "defaultValue": 1
     },
     "redisCacheVersion": {
       "type": "string",
       "defaultValue": "2.8",
       "metadata": {
         "description": "The Redis server version of the new cache."
-      }
-    },
-    "diagnosticsStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "Existing storage account for diagnostics."
-      }
-    },
-    "storageAccountType": {
-      "type": "string",
-      "defaultValue": "Standard_LRS",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS",
-        "Standard_ZRS"
-      ],
-      "metadata": {
-        "description": "Storage Account type"
       }
     },
     "enableNonSslPort": {
@@ -77,7 +69,26 @@
         "OFF"
       ],
       "metadata": {
-        "description": "A value that indicates whether diagnostices is enabled. Use ON or OFF."
+        "description": "A value that indicates whether diagnostics is enabled. Use ON or OFF."
+      }
+    },
+    "diagnosticsStorageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "New storage account for diagnostics."
+      }
+    },
+    "storageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_ZRS",
+        "Premium_LRS"
+      ],
+      "metadata": {
+        "description": "Storage Account type"
       }
     }
   },

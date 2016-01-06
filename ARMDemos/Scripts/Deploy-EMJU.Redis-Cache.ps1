@@ -2,12 +2,12 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName,   
+  [string] $ResourceGroupName,
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
-  [string] $StorageAccountResourceGroupName, 
+  [string] $StorageAccountResourceGroupName,
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
-  [string] $TemplateFile, 
+  [string] $TemplateFile,
   [string] $TemplateParametersFile,
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe',
