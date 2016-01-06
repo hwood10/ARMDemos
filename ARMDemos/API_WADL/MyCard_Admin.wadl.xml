@@ -7,12 +7,12 @@
       <method name="GET">
         <request>
           <param name="hierarchies" style="query" type="xs:string" default="y">
-            <doc>If hierarchies=y, then hierarchy payload that is returned in Hierarchy Service will also be returned along with this Service. But if this query parameter is omitted or if its passed as hierarchies=n, then hierarchy payload won’t be returned.</doc>
+            <doc>If hierarchies=y, then hierarchy payload that is returned in Hierarchy Service will also be returned along with this Service. But, if this query parameter is omitted or if its passed as hierarchies=n, then hierarchy payload won’t be returned.</doc>
             <option value="y" />
             <option value="n" />
           </param>
           <param name="storeId" style="query" type="xs:number">
-            <doc>This specified the store id for which offers will be retrived for. If store id is null or not specified it will default to the user primary store id.</doc>
+            <doc>This specified the store id for which offers will be retrieved for. If store id is null or not specified it will default to the user primary store id.</doc>
           </param>
         </request>
       </method>
@@ -22,7 +22,7 @@
       <method name="GET">
         <request>
           <param name="storeId" style="query" type="xs:number">
-            <doc>This specified the store id for which offers will be retrived for. If store id is null or not specified it will default to the user primary store id.</doc>
+            <doc>This specified the store id for which offers will be retrieved for. If store id is null or not specified it will default to the user primary store id.</doc>
           </param>
         </request>
       </method>

@@ -3,7 +3,7 @@
   <doc title="Coreservices Admin" />
   <resources base="http://nimbusqi.azure-api.net/J4UProgram1/services/internal">
     <resource path="/personalizedcontent">
-      <doc title="Personalized Content Service">Retrieves the personalized content for the user</doc>
+      <doc title="Personalized Content Service">Retrieves the personalized content for the user.</doc>
       <method name="GET">
         <request>
           <param name="storeId" style="query" type="xs:number">
@@ -13,7 +13,7 @@
       </method>
     </resource>
     <resource path="/program/{program}/offer/definitions">
-      <doc title="Offer Definitions Retrieval Service">Retrieves the Offer definitions for Offer program</doc>
+      <doc title="Offer Definitions Retrieval Service">Retrieves the Offer definitions for Offer program.</doc>
       <param name="program" style="template" type="xs:string" required="true">
         <doc>Identifies the desired UI program</doc>
         <option value="PD" />
@@ -24,7 +24,7 @@
       <method name="GET">
         <request>
           <param name="rowIndex" style="query" type="xs:number">
-            <doc>Row Index from which the records should be retrieved. If rowIndex is not provided and rowLimit is provided, then all offer definitions from the start upto the rowLimit will be returned.</doc>
+            <doc>Row Index from which the records should be retrieved. If rowIndex is not provided and rowLimit is provided, then all offer definitions from the start up to the rowLimit will be returned.</doc>
           </param>
           <param name="rowLimit" style="query" type="xs:number">
             <doc>Number of records that should be retrieved starting from rowIndex. If rowIndex is  provided and rowLimit is not provided, then all the offers from the rowIndex will be returned.</doc>
@@ -54,13 +54,13 @@
       </method>
     </resource>
     <resource path="/offer/categories">
-      <doc title="Category List Retrieval Service">Retrieves the categories for the category drop-down list</doc>
+      <doc title="Category List Retrieval Service">Retrieves the categories for the category drop-down list.</doc>
       <method name="GET">
         <request />
       </method>
     </resource>
     <resource path="/repository/customer/exists/household/{householdId}">
-      <doc title="Household Validation Service">Validates the existence of a Household based on householdId</doc>
+      <doc title="Household Validation Service">Validates the existence of a Household based on householdId.</doc>
       <param name="householdId" style="template" type="xs:number" required="true">
         <doc>HouseholdId that needs to be validated for existence.</doc>
       </param>

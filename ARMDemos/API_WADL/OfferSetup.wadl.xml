@@ -3,19 +3,19 @@
   <doc title="OfferSetup" />
   <resources base="http://nimbusqi.azure-api.net/J4UOffers1/services">
     <resource path="/offer/create">
-      <doc title="Create Offer Service">Based on the given Offer details, this service will create a J4U offer, ready for preview. </doc>
+      <doc title="Create Offer Service">Based on the given offer details, this service will create a J4U offer, ready for preview.</doc>
       <method name="POST">
         <request />
       </method>
     </resource>
     <resource path="/offer/update">
-      <doc title="Update Offer Service">This service will update an exiting J4U Offer with the Offer details passed in.  The offer passed in is expected to be complete, same requirements as in creating a new offer.</doc>
+      <doc title="Update Offer Service">This service will update an exiting J4U Offer with the Offer details passed in. The offer passed in is expected to be complete, with the same requirements as creating a new offer.</doc>
       <method name="POST">
         <request />
       </method>
     </resource>
     <resource path="/offer/deactivate">
-      <doc title="Deactivate Offer Service">This service will deactivate an existing J4U offer. </doc>
+      <doc title="Deactivate Offer Service">This service will deactivate an existing J4U offer.</doc>
       <method name="POST">
         <request />
       </method>

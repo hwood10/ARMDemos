@@ -11,23 +11,23 @@
             <option value="y" />
           </param>
           <param name="storeId" style="query" type="xs:number">
-            <doc>This specified the store id for which offers will be retrived for. If store id is null or not specified it will default to the user primary store id.</doc>
+            <doc>This specified the store id for which offers will be retrieved for. If store id is null or not specified it will default to the user primary store id.</doc>
           </param>
         </request>
       </method>
     </resource>
     <resource path="/count">
-      <doc title="My Card Count Service">Retrieves the count of items in My Card for the user</doc>
+      <doc title="My Card Count Service">Retrieves the count of items in My Card for the user.</doc>
       <method name="GET">
         <request>
           <param name="storeId" style="query" type="xs:number">
-            <doc>This specified the store id for which offers will be retrived for. If store id is null or not specified it will default to the user primary store id.</doc>
+            <doc>This specified the store id for which offers will be retrieved for. If store id is null or not specified it will default to the user primary store id.</doc>
           </param>
         </request>
       </method>
     </resource>
     <resource path="/redeemedoffers">
-      <doc title="My Card Redeemed Offers List Service">Allows J4U users to view a list of redeemed offers for the user in last 60+ days. </doc>
+      <doc title="My Card Redeemed Offers List Service">Allows J4U users to view a list of redeemed offers for the user in last 60+ days.</doc>
       <method name="GET">
         <request>
           <param name="hierarchies" style="query" type="xs:string" default="n">
@@ -39,7 +39,7 @@
       </method>
     </resource>
     <resource path="/expiredoffers">
-      <doc title="My Card Expired Offers List Service">Retrieves offers clipped to user and now expired</doc>
+      <doc title="My Card Expired Offers List Service">Retrieves offers clipped to user and now expired.</doc>
       <method name="GET">
         <request>
           <param name="hierarchies" style="query" type="xs:string" default="n">
@@ -51,7 +51,7 @@
       </method>
     </resource>
     <resource path="/savings">
-      <doc title="Customer Savings">Retrieves customer’s savings amount for the current year and total savings amount for the lifetime. </doc>
+      <doc title="Customer Savings">Retrieves customer’s savings amount for the current year and total savings amount for the lifetime.</doc>
       <method name="GET">
         <request />
       </method>

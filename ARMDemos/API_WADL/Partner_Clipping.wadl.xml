@@ -3,7 +3,7 @@
   <doc title="Partner Clipping" />
   <resources base="https://nimbusqi.azure-api.net/services/partner">
     <resource path="/clip/offers">
-      <doc title="Partner Clip Service">This RESTful service allows J4U users to Clip/add offers to their shopping list &amp; non-J4U users to add the offers to their card via. Copient. </doc>
+      <doc title="Partner Clip Service">This RESTful service allows J4U users to clip/add offers to their shopping list &amp; non-J4U users to add the offers to their card via Copient.</doc>
       <method name="POST">
         <request />
       </method>

@@ -3,14 +3,14 @@
   <doc title="MyListPurchaseHistory" />
   <resources base="http://nimbusqi.azure-api.net/J4UProgram1/services/purchasehistory">
     <resource path="/">
-      <doc title="Purchase History Item Offers Retrieval Service">retrieves any PD/CC/YCS offers corresponding to 1 or more selected Purchase History items.</doc>
+      <doc title="Purchase History Item Offers Retrieval Service">Retrieves any PD/CC/YCS offers corresponding to 1 or more selected Purchase History items.</doc>
       <method name="GET">
         <request>
           <param name="storeId" style="query" type="xs:number">
-            <doc>Prefered Selected Store Id. Should a valid numeric value. If store id is not provided, then the primary store id will be considered.</doc>
+            <doc>Preferred Selected Store Id. Should a valid numeric value. If store id is not provided, then the primary store id will be considered.</doc>
           </param>
           <param name="sort" style="query" type="xs:string">
-            <doc>The type of sort, the default is category</doc>
+            <doc>The type of sort, the default is category.</doc>
             <option value="category" />
             <option value="offers" />
             <option value="purchaseFrequency" />

@@ -2,10 +2,10 @@
 
 Param(
   [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-  [string] $ResourceGroupName,   
+  [string] $ResourceGroupName,
   [switch] $UploadArtifacts,
   [string] $StorageAccountName,
-  [string] $StorageAccountResourceGroupName, 
+  [string] $StorageAccountResourceGroupName,
   [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
   [string] $ArtifactStagingDirectory = '..\bin\Debug\staging',
   [string] $AzCopyPath = '..\Tools\AzCopy.exe',
@@ -61,7 +61,7 @@ echo $('Execution completed ')
 
 #Set-AzureRmContext -SubscriptionId $SubscriptionID -TenantId $TenantID # -SubscriptionName $SubscriptionName
 
-#New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocation 
+#New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocation
 
 #$ApiMgmtContext = New-AzureRmApiManagementContext -ResourceGroupName $ResourceGroupName -ServiceName "nimbusqa1"
 

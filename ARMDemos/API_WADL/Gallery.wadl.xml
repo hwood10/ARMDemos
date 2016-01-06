@@ -19,7 +19,7 @@
             <option value="n" />
           </param>
           <param name="storeId" style="query" type="xs:number">
-            <doc>This specifies the store id for which offers will be retrived for. If store id is null or not specified it will default to the user primary store id.</doc>
+            <doc>This specifies the store id for which offers will be retrieved for. If store id is null or not specified it will default to the user primary store id.</doc>
           </param>
           <param name="topAllocations" style="query" type="xs:string">
             <doc>Applicable only for YCS. If topAllocations=y, then top allocations by frequency and savings will also be returned. In addition to this, frequencyRank and savingsRank of each allocated offer will be returned</doc>
@@ -42,7 +42,7 @@
             <option value="campaign" />
           </param>
           <param name="eventId" style="query" type="xs:number">
-            <doc>Mandatory if view is ‘campaign’. Identifies the desired event for the campaign.</doc>
+            <doc>Mandatory if view is campaign. Identifies the desired event for the campaign.</doc>
           </param>
         </request>
       </method>
@@ -56,7 +56,7 @@
       <method name="GET">
         <request>
           <param name="storeId" style="query" type="xs:number">
-            <doc>Prefered Store Id. Should be a valid numeric value. Will be defaulted to primary store if not provided</doc>
+            <doc>Preferred Store Id. Should be a valid numeric value. Will be defaulted to primary store if not provided</doc>
           </param>
           <param name="hiddenCategories" style="query" type="xs:string">
             <doc>Coma separated hidden category ids. If this parameter is not provided, hidden category filtration will not be done.</doc>

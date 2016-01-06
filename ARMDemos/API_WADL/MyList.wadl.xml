@@ -3,19 +3,19 @@
   <doc title="MyList" />
   <resources base="http://nimbusqi.azure-api.net/emlss/services">
     <resource path="/integratedshoppinglist/list">
-      <doc title="MyList Service">Retrieves the items added to MyList</doc>
+      <doc title="MyList Service">Retrieves the items added to MyList.</doc>
       <method name="GET">
         <request />
       </method>
     </resource>
     <resource path="/integratedshoppinglist/list/getCount">
-      <doc title="MyList Count Service">Retrieves count of items added to MyList</doc>
+      <doc title="MyList Count Service">Retrieves count of items added to MyList.</doc>
       <method name="GET">
         <request />
       </method>
     </resource>
     <resource path="/integratedshoppinglist/list/email">
-      <doc title="MyList Email Service">Email all or selected items</doc>
+      <doc title="MyList Email Service">Email all or selected items.</doc>
       <method name="POST">
         <request />
       </method>
