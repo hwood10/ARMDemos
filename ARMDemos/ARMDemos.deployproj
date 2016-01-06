@@ -28,6 +28,38 @@
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Akamai\files\100x100.gif" />
+    <None Include="Akamai\files\120x80.gif" />
+    <None Include="Akamai\files\320x240.gif" />
+    <None Include="Akamai\files\340x123.gif" />
+    <None Include="Akamai\files\386x320.gif" />
+    <None Include="Akamai\files\400x400.gif" />
+    <None Include="Akamai\files\500x500.gif" />
+    <None Include="Akamai\files\540x320.gif" />
+    <None Include="Akamai\files\600x400.gif" />
+    <None Include="Akamai\files\640x480.gif" />
+    <None Include="Akamai\files\780x620.gif" />
+    <None Include="Akamai\files\800x600.gif" />
+    <None Include="Akamai\files\akaspacer.gif" />
+    <None Include="Akamai\files\background_main_content.png" />
+    <None Include="Akamai\files\background_tile2.gif" />
+    <None Include="Akamai\files\bg3.png" />
+    <None Include="Akamai\files\bg_black.png" />
+    <None Include="Akamai\files\bg_right_bottom.png" />
+    <None Include="Akamai\files\caret_bullet.gif" />
+    <None Include="Akamai\files\caret_bullet_black.png" />
+    <None Include="Akamai\files\dash_bullet.gif" />
+    <None Include="Akamai\files\dash_bullet_black.png" />
+    <None Include="Akamai\files\dash_bullet_blue.gif" />
+    <None Include="Akamai\files\footer_separator.gif" />
+    <None Include="Akamai\files\global.js" />
+    <None Include="Akamai\files\pg-002.css" />
+    <None Include="Akamai\files\plus_bullet.gif" />
+    <None Include="Akamai\files\roi.jpg" />
+    <None Include="Akamai\files\style.css" />
+    <None Include="Akamai\files\swfobject.js" />
+    <None Include="Akamai\sla-test-object.html" />
+    <None Include="Akamai\sureroute-test-object.html" />
     <None Include="API_WADL\Akamai_SureRoute.wadl.xml" />
     <None Include="API_WADL\Copient_Services.wadl.xml" />
     <None Include="API_WADL\Coreservices_Admin.wadl.xml" />
@@ -52,6 +84,7 @@
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SFTP-NonNet.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs-SSH.DEV.ps1" />
     <Content Include="Scripts\Demo\Deploy-AzureResourceGroup-VMs.DEV.ps1" />
+    <Content Include="Scripts\Deploy-EMJU.AkamaiRoutes-Storage.ps1" />
     <Content Include="Scripts\Deploy-EMJU.APIM-PAAS.ps1" />
     <Content Include="Scripts\Deploy-EMJU.HDInsight-VMs.ps1" />
     <Content Include="Scripts\Deploy-EMJU.FileShare-Storage.ps1" />
@@ -111,6 +144,8 @@
     <None Include="Templates\DSE-mainTemplate.param.dev.json" />
     <None Include="Templates\DSE-nodesTemplate.json" />
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
+    <None Include="Templates\EMJU-qa1\EMJU.AkamaiRoutes-Storage.param.qa1.json" />
+    <None Include="Templates\EMJU.AkamaiRoutes-Storage.json" />
     <None Include="Templates\EMJU-pf\EMJU.FileShare-Storage.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.Redis-Cache.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.ServiceBus-PAAS.param.pf.json" />
