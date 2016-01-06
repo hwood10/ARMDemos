@@ -26,5 +26,34 @@
         <request />
       </method>
     </resource>
+    <resource path="/offer/aggregator/updateStatus">
+      <doc title="Offer Update Aggregator Status  Service">This RESTful service does allows to update the aggregator offer status in Cassandra database and OMS.</doc>
+      <method name="POST">
+        <request>
+          <representation mediaType="application/xml">
+            <doc> &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;AggregatorOfferStatus xmlns="http://www.safeway.com/app/emju/offersetup/domain"&gt;
+    &lt;Aggregator&gt;COUPONSINC&lt;/Aggregator&gt;
+    &lt;AggregatorOfferStatusTypeId&gt;AD&lt;/AggregatorOfferStatusTypeId&gt;
+&lt;/AggregatorOfferStatus&gt;</doc>
+          </representation>
+        </request>
+      </method>
+    </resource>
+    <resource path="/offer/updateStatus">
+      <doc title="Offer Update Status  Service">This RESTful service does allows to update the offer status in Cassandra database and OMS.</doc>
+      <method name="POST">
+        <request>
+          <representation mediaType="application/xml">
+            <doc> &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;OfferStatus xmlns="http://www.safeway.com/app/emju/offersetup/domain"&gt;
+    &lt;ExternalOfferId&gt;13810-111567-00&lt;/ExternalOfferId&gt;
+    &lt;OfferStatusTypeId&gt;L&lt;/OfferStatusTypeId&gt;
+&lt;/OfferStatus&gt;
+</doc>
+          </representation>
+        </request>
+      </method>
+    </resource>
   </resources>
 </application>
