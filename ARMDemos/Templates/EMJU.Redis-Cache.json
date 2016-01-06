@@ -18,7 +18,8 @@
       "type": "string",
       "allowedValues": [
         "Basic",
-        "Standard"
+        "Standard",
+        "Premium"
       ],
       "defaultValue": "Standard",
       "metadata": {
@@ -28,6 +29,10 @@
     "redisCacheFamily": {
       "type": "string",
       "defaultValue": "C",
+      "allowedValues": [
+        "C",
+        "P"
+      ],
       "metadata": {
         "description": "The family for the sku."
       }
