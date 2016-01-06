@@ -90,6 +90,7 @@
         "Standard_LRS",
         "Standard_GRS",
         "Standard_ZRS",
+        "Standard_RAGRS",
         "Premium_LRS"
       ],
       "metadata": {
@@ -101,7 +102,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[parameters('diagnosticsStorageAccountName')]",
-      "apiVersion": "2015-05-01-preview",
+      "apiVersion": "2015-06-15",
       "location": "[parameters('redisCacheLocation')]",
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
