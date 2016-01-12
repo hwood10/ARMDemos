@@ -17,6 +17,7 @@ $FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
 $RedisCacheTemplate = "..\Templates\EMJU.Redis-Cache.json"
 $ServiceBusTemplate = "..\Templates\EMJU.ServiceBus-PAAS.json"
 $DSETemplate = "..\Templates\EMJU.DSE-Stack.json"
+$HDInsightBaseTemplate = "..\Templates\EMJU.HDInsight-Base.json"
 $HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
@@ -85,7 +86,7 @@ $invokeArgs += $subscriptionArgs
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-REDIS")
 $invokeArgs += ("-TemplateFile", $RedisCacheTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.Redis-Cache.param.qa1.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.RedisCache-PAAS.param.qa1.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.Redis-Cache.ps1 $invokeArgs"
 
@@ -105,7 +106,7 @@ $invokeArgs += $subscriptionArgs
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-APIM")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.APIM-PAAS.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.APIM-PAAS.ps1 $invokeArgs"
 
 
 ###############################
@@ -266,6 +267,14 @@ $invokeArgs += $subscriptionArgs
 ###############################
 ##HDInsight
 ###############################
+
+##HDInsightBase
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-HDIBase")
+$invokeArgs += ("-TemplateFile", $HDInsightBaseTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.HDInsight-Base.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-Base.ps1 $invokeArgs"
 
 ##HDInsight
 $invokeArgs = @()
