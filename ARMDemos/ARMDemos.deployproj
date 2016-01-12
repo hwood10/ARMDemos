@@ -145,6 +145,7 @@
     <None Include="Templates\DSE-mainTemplate.param.dev.json" />
     <None Include="Templates\DSE-nodesTemplate.json" />
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
+    <None Include="Templates\EMJU-pf\EMJU.HDInsight-VMs.param.pf.json" />
     <None Include="Templates\EMJU-pr\EMJU.FileShare-Storage.param.pr.json" />
     <None Include="Templates\EMJU-pr\EMJU.Network.param.pr.json" />
     <None Include="Templates\EMJU-pr\EMJU.PrivateService-VMs-Management.param.pr.json" />

@@ -15,8 +15,7 @@
         "South Central US",
         "Southeast Asia",
         "West Europe",
-        "West US",
-        "westus"
+        "West US"
       ],
       "metadata": {
         "description": "The location where all resources will be deployed."
@@ -81,78 +80,77 @@
         "description": "The password must be at least 10 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter."
       }
     },
-    "storageAccountResourceGroup": {
+    "existingClusterStorageResourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "The resource group name of the storage account to use as the cluster's default storage."
+      }
+    },
+    "existingClusterStorageAccountName": {
       "type": "string",
       "metadata": {
         "description": "The name of the storage account to use as the cluster's default storage."
       }
     },
-    "clusterStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "The name of the storage account to use as the cluster's default storage."
-      }
-    },
-    "storageAccountType": {
-      "type": "string",
-      "defaultValue": "Standard_LRS",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS",
-        "Standard_ZRS"
-      ],
-      "metadata": {
-        "description": "Storage Account type"
-      }
-    },
-    "clusterStorageContainerName": {
+    "newOrExistingClusterStorageContainerName": {
       "type": "string",
       "metadata": {
         "description": "The name of the storage container to use."
       }
     },
-    "virtualNetworkResourceGroup": {
+    "existingHiveMetastoreServerName": {
       "type": "string",
       "metadata": {
-        "description": "The virtual network name."
+        "description": "The fully-qualified domain name of the SQL server to use for the external Hive metastore."
       }
     },
-    "virtualNetworkName": {
+    "existingHiveMetastoreDatabaseName": {
       "type": "string",
       "metadata": {
-        "description": "The virtual network name."
+        "description": "The external Hive metastore's existing SQL database."
       }
     },
-    "virtualNetworkSubnetName": {
+    "existingHiveMetastoreUsername": {
       "type": "string",
       "metadata": {
-        "description": "The virtual network subnet name."
+        "description": "The external Hive metastore's existing SQL server admin username."
+      }
+    },
+    "existingHiveMetastorePassword": {
+      "type": "string",
+      "metadata": {
+        "description": "The external Hive metastore's existing SQL server admin password."
+      }
+    },
+    "existingVirtualNetworkResourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "The existing virtual network resource group name."
+      }
+    },
+    "existingVirtualNetworkName": {
+      "type": "string",
+      "metadata": {
+        "description": "The existing virtual network name."
+      }
+    },
+    "existingVirtualNetworkSubnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "The existing virtual network subnet name."
       }
     }
   },
   "variables": {
-    "defaultApiVersion": "2015-05-01-preview",
+    "defaultApiVersion": "2015-06-15",
     "clusterApiVersion": "2015-03-01-preview"
   },
   "resources": [
-
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[parameters('clusterStorageAccountName')]",
-      "apiVersion": "2015-05-01-preview",
-      "location": "[parameters('location')]",
-      "properties": {
-        "accountType": "[parameters('storageAccountType')]"
-      }
-    },
     {
       "name": "[parameters('clusterName')]",
       "type": "Microsoft.HDInsight/clusters",
       "location": "[parameters('location')]",
       "apiVersion": "[variables('clusterApiVersion')]",
-      "dependsOn": [
-        "[concat('Microsoft.Storage/storageAccounts/', parameters('clusterStorageAccountName'))]"
-      ],
       "properties": {
         "clusterVersion": "[parameters('clusterVersion')]",
         "osType": "Linux",
@@ -163,16 +161,30 @@
               "restAuthCredential.isEnabled": true,
               "restAuthCredential.username": "[parameters('clusterLoginUserName')]",
               "restAuthCredential.password": "[parameters('clusterLoginPassword')]"
+            },
+            "hive-site": {
+              "javax.jdo.option.ConnectionDriverName": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+              "javax.jdo.option.ConnectionURL": "[concat('jdbc:sqlserver://',parameters('existingHiveMetastoreServerName'),';database=',parameters('existingHiveMetastoreDatabaseName'),';encrypt=true;trustServerCertificate=true;create=false;loginTimeout=300')]",
+              "javax.jdo.option.ConnectionUserName": "[parameters('existingHiveMetastoreUsername')]",
+              "javax.jdo.option.ConnectionPassword": "[parameters('existingHiveMetastorePassword')]"
+            },
+            "hive-env": {
+              "hive_database": "Existing MSSQL Server database with SQL authentication",
+              "hive_database_name": "[parameters('existingHiveMetastoreDatabaseName')]",
+              "hive_database_type": "mssql",
+              "hive_existing_mssql_server_database": "[parameters('existingHiveMetastoreDatabaseName')]",
+              "hive_existing_mssql_server_host": "[parameters('existingHiveMetastoreServerName')]",
+              "hive_hostname": "[parameters('existingHiveMetastoreServerName')]"
             }
           }
         },
         "storageProfile": {
           "storageaccounts": [
             {
-              "name": "[concat(parameters('clusterStorageAccountName'),'.blob.core.windows.net')]",
+              "name": "[concat(parameters('existingClusterStorageAccountName'),'.blob.core.windows.net')]",
               "isDefault": true,
-              "container": "[parameters('clusterStorageContainerName')]",
-              "key": "[listKeys(resourceId(parameters('storageAccountResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('clusterStorageAccountName')), variables('defaultApiVersion')).key1]"
+              "container": "[parameters('newOrExistingClusterStorageContainerName')]",
+              "key": "[listKeys(resourceId(parameters('existingClusterStorageResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingClusterStorageAccountName')), variables('defaultApiVersion')).key1]"
             }
           ]
         },
@@ -191,8 +203,8 @@
                 }
               },
               "virtualNetworkProfile": {
-                "id": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-                "subnet": "[concat(resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName')), '/subnets/', parameters('virtualNetworkSubnetName'))]"
+                "id": "[resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName'))]",
+                "subnet": "[concat(resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName')), '/subnets/', parameters('existingVirtualNetworkSubnetName'))]"
               }
             },
             {
@@ -208,8 +220,8 @@
                 }
               },
               "virtualNetworkProfile": {
-                "id": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-                "subnet": "[concat(resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName')), '/subnets/', parameters('virtualNetworkSubnetName'))]"
+                "id": "[resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName'))]",
+                "subnet": "[concat(resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName')), '/subnets/', parameters('existingVirtualNetworkSubnetName'))]"
               }
             }
           ]
