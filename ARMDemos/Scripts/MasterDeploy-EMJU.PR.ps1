@@ -84,7 +84,7 @@ $invokeArgs += $subscriptionArgs
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZPR-REDIS")
 $invokeArgs += ("-TemplateFile", $RedisCacheTemplate)
-$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pr\EMJU.Redis-Cache.param.pr.json")
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pr\EMJU.RedisCache-PAAS.param.pr.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.Redis-Cache.ps1 $invokeArgs"
 
