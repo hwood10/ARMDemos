@@ -13,6 +13,9 @@ $NetworkTemplate = "..\Templates\EMJU.Network.json"
 $SSHBastionTemplate ="..\Templates\EMJU.SSH-VMs.json"
 $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
+$DSETemplate = "..\Templates\EMJU.DSE-Stack.json"
+$HDInsightBaseTemplate = "..\Templates\EMJU.HDInsight-Base.json"
+$HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
 
@@ -149,7 +152,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZDV-Lite-VMs")
 $invokeArgs += ("-TemplateFile", $PublicServiceTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\J4UDevelopment\EMJU.PublicService-VMs-Lite.param.dev.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.Lite-VMs.ps1 $invokeArgs"
 
 #OfferSetup
 $invokeArgs = @()
@@ -215,7 +218,30 @@ $invokeArgs += $subscriptionArgs
 ##Datastax
 ###############################
 
+##Datastax
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV-DSE")
+$invokeArgs += ("-TemplateFile", $DSETemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\J4UDevelopment\EMJU.DSE-Stack.param.dev.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.DSE-VMs.ps1 $invokeArgs"
 
 ###############################
 ##HDInsight
 ###############################
+
+##HDInsightBase
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV-HDIBase")
+$invokeArgs += ("-TemplateFile", $HDInsightBaseTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\J4UDevelopment\EMJU.HDInsight-Base.param.dev.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-Base.ps1 $invokeArgs"
+
+##HDInsight
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZDV-HDI")
+$invokeArgs += ("-TemplateFile", $HDInsightTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\J4UDevelopment\EMJU.HDInsight-VMs.param.dev.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-VMs.ps1 $invokeArgs"

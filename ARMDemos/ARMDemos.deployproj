@@ -291,6 +291,8 @@
     <None Include="Templates\EMJU-pf\EMJU.SSH-VMs.param.pf.json" />
     <None Include="Templates\EMJU.RedisCache-PAAS.json" />
     <None Include="Templates\EMJU.ServiceBus-PAAS.json" />
+    <None Include="Templates\J4UDevelopment\EMJU.HDInsight-Base.param.dev.json" />
+    <None Include="Templates\J4UDevelopment\EMJU.HDInsight-VMs.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.PublicService-VMs-Lite.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.Network.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.PrivateService-VMs-Management.param.dev.json" />
