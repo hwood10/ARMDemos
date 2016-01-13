@@ -51,13 +51,13 @@ $fileshare = New-AzureStorageShare $OutputValues.Outputs.ftpFileShareName.value 
 Set-AzureStorageShareQuota -Share $fileshare -Quota $OutputValues.Outputs.ftpFileShareQuota.value
 
 # create a directory in the share
-New-AzureStorageDirectory -ShareName $OutputValues.Outputs.ftpFileShareName.value -Context $ctx -Path "/apps"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input"
-New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input/transfer"
+#New-AzureStorageDirectory -ShareName $OutputValues.Outputs.ftpFileShareName.value -Context $ctx -Path "/apps"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input"
+#New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input/transfer"
 
 # create a new container
 $containershare = New-AzureStorageContainer $OutputValues.Outputs.installStorageShareName.value -Context $ctx -Permission Off
