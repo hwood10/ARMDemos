@@ -9,3 +9,4 @@ apt-get update
 apt-get install newrelic-sysmond
 nrsysmond-config --set license_key=100fd566d2831cf9d2c8fb645c4561f8c846e6a5
 /etc/init.d/newrelic-sysmond start
+
