@@ -17,6 +17,7 @@ $AkamaiStorageTemplate = "..\Templates\EMJU.AkamaiRoutes-Storage.json"
 $FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
 $RedisCacheTemplate = "..\Templates\EMJU.Redis-Cache.json"
 $ServiceBusTemplate = "..\Templates\EMJU.ServiceBus-PAAS.json"
+$HDInsightBaseTemplate = "..\Templates\EMJU.HDInsight-Base.json"
 $HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
@@ -76,7 +77,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-AKAMAI")
 $invokeArgs += ("-TemplateFile", $AkamaiStorageTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.AkamaiRoutes-Storage.param.pf.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.AkamaiRoutes-Storage.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.AkamaiRoutes-Storage.ps1 $invokeArgs"
 
 ###############################
 ##FileSharing
@@ -271,6 +272,16 @@ $invokeArgs += $subscriptionArgs
 ###############################
 ##HDInsight
 ###############################
+
+##HDInsightBase
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZPF-HDIBase")
+$invokeArgs += ("-TemplateFile", $HDInsightBaseTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pf\EMJU.HDInsight-Base.param.pf.json")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.HDInsight-Base.ps1 $invokeArgs"
+
+##HDInsight
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZPF-HDI")
 $invokeArgs += ("-TemplateFile", $HDInsightTemplate)
