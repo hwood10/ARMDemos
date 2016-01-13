@@ -49,4 +49,4 @@ $ctx = New-AzureStorageContext -StorageAccountName $OutputValues.Outputs.storage
 # create a new container
 $containershare = New-AzureStorageContainer $OutputValues.Outputs.blobStorageShareName.value -Context $ctx -Permission Off
 
-Get-ChildItem –Path ..\Akamai\* | Set-AzureStorageBlobContent -Container $OutputValues.Outputs.blobStorageShareName.value -Context $ctx
+Get-ChildItem –Path ..\Akamai\* -File -Recurse | Set-AzureStorageBlobContent -Container $OutputValues.Outputs.blobStorageShareName.value -Context $ctx

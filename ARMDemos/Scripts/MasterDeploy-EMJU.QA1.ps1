@@ -13,6 +13,7 @@ $NetworkTemplate = "..\Templates\EMJU.Network.json"
 $SSHBastionTemplate ="..\Templates\EMJU.SSH-VMs.json"
 $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
+$AkamaiStorageTemplate = "..\Templates\EMJU.AkamaiRoutes-Storage.json"
 $FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
 $RedisCacheTemplate = "..\Templates\EMJU.Redis-Cache.json"
 $ServiceBusTemplate = "..\Templates\EMJU.ServiceBus-PAAS.json"
@@ -65,6 +66,18 @@ $invokeArgs += ("-TemplateFile", $SSHBastionTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.SSH-VMs.param.qa1.json")
 $invokeArgs += $subscriptionArgs
 #Invoke-Expression ".\Deploy-EMJU.SSH-VMs.ps1 $invokeArgs"
+
+###############################
+##Akamai
+###############################
+
+##Akamai
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZQA1-AKAMAI")
+$invokeArgs += ("-TemplateFile", $AkamaiStorageTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-qa1\EMJU.AkamaiRoutes-Storage.param.qa1.json")
+$invokeArgs += $subscriptionArgs
+Invoke-Expression ".\Deploy-EMJU.AkamaiRoutes-Storage.ps1 $invokeArgs"
 
 ###############################
 ##FileSharing
