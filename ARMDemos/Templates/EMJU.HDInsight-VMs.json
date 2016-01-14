@@ -15,7 +15,8 @@
         "South Central US",
         "Southeast Asia",
         "West Europe",
-        "West US"
+        "West US",
+        "westus"
       ],
       "metadata": {
         "description": "The location where all resources will be deployed."

@@ -12,10 +12,10 @@
       "value": "3.3"
     },
     "headNodeSize": {
-      "value": "Standard_D13"
+      "value": "Standard_D12"
     },
     "workerNodeSize": {
-      "value": "Standard_D13"
+      "value": "Standard_D12"
     },
     "workerNodeCount": {
       "value": 4
