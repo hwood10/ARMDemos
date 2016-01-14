@@ -30,16 +30,7 @@
     "value": "C@ss@ndr@1"
   },
   "templateBaseUrl": {
-    "value": "https://raw.githubusercontent.com/J4U-Nimbus/ARMDemos/master/ARMDemos/Templates/"
-  },
-  "nodesTemplateFile": {
-    "value": "EMJU.DSE-Nodes.json"
-  },
-  "opsCenterTemplateFile": {
-    "value": "EMJU.DSE-OpsCenterVMs.json"
-  },
-  "opsCenterInstallTemplateFile": {
-    "value": "EMJU.DSE-OpsCenterInstall.json"
+    "value": "https://raw.githubusercontent.com/J4U-Nimbus/ARMDemos/master/ARMDemos/"
   },
   "clusterIPRangeBase": {
     "value": "10.0.200."

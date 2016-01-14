@@ -98,27 +98,6 @@
         "description": "Base url for all deployment templates"
       }
     },
-    "nodesTemplateFile": {
-      "type": "string",
-      "defaultValue": "DSE-nodesTemplate.json",
-      "metadata": {
-        "description": "file name for nodes deployment template"
-      }
-    },
-    "opsCenterTemplateFile": {
-      "type": "string",
-      "defaultValue": "DSE-opscenterTemplate.json",
-      "metadata": {
-        "description": "file name for opscenter deployment template"
-      }
-    },
-    "opsCenterInstallTemplateFile": {
-      "type": "string",
-      "defaultValue": "DSE-opscenterInstallTemplate.json",
-      "metadata": {
-        "description": "file name for opscenter install template"
-      }
-    },
     "clusterIPRangeBase": {
       "type": "string",
       "defaultValue": "172.31.195.",
@@ -165,9 +144,9 @@
   "variables": {
     "region": "[resourcegroup().location]",
     "templateBaseUrl": "[parameters('templateBaseUrl')]",
-    "nodesTemplateUrl": "[concat(variables('templateBaseUrl'), parameters('nodesTemplateFile'))]",
-    "opsCenterTemplateUrl": "[concat(variables('templateBaseUrl'), parameters('opsCenterTemplateFile'))]",
-    "opsCenterInstallTemplateUrl": "[concat(variables('templateBaseUrl'), parameters('opsCenterInstallTemplateFile'))]",
+    "nodesTemplateUrl": "[concat(variables('templateBaseUrl'), 'Templates/EMJU.DSE-Nodes.json'))]",
+    "opsCenterTemplateUrl": "[concat(variables('templateBaseUrl'), 'Templates/EMJU.DSE-OpsCenterVMs.json'))]",
+    "opsCenterInstallTemplateUrl": "[concat(variables('templateBaseUrl'), 'Templates/EMJU.DSE-OpsCenterInstall.json'))]",
     "nodeList": "[concat(variables('dc1clusterRange').base, variables('dc1clusterRange').start, '-', parameters('nodeCount'))]",
     "dc1StorageAccountName": "[concat(parameters('dc1namespace'),uniqueString(resourceGroup().id, deployment().name))]",
     "dc2StorageAccountName": "[concat(parameters('dc2namespace'),uniqueString(resourceGroup().id, deployment().name))]",
@@ -191,9 +170,9 @@
         "version": "latest"
       },
       "scripts": [
-        "[concat(variables('templateBaseUrl'), 'DSE_dseNode.sh')]",
-        "[concat(variables('templateBaseUrl'), 'DSE_opscenter.sh')]",
-        "[concat(variables('templateBaseUrl'), 'DSE_vm-disk-utils-0.1.sh')]"
+        "[concat(variables('templateBaseUrl'), 'Extension_Scripts/DSE_dseNode.sh')]",
+        "[concat(variables('templateBaseUrl'), 'Extension_Scripts/DSE_opscenter.sh')]",
+        "[concat(variables('templateBaseUrl'), 'Extension_Scripts/DSE_vm-disk-utils-0.1.sh')]"
       ]
     }
   },
