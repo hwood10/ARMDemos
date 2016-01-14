@@ -244,4 +244,4 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZDV-HDI")
 $invokeArgs += ("-TemplateFile", $HDInsightTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\J4UDevelopment\EMJU.HDInsight-VMs.param.dev.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.HDInsight-VMs.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-VMs.ps1 $invokeArgs"

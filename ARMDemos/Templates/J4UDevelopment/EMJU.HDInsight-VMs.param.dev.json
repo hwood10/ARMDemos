@@ -12,10 +12,10 @@
       "value": "3.3"
     },
     "headNodeSize": {
-      "value": "Standard_D12"
+      "value": "Standard_D13"
     },
     "workerNodeSize": {
-      "value": "Standard_D12"
+      "value": "Standard_D13"
     },
     "workerNodeCount": {
       "value": 4
@@ -61,18 +61,6 @@
     },
     "existingVirtualNetworkSubnetName": {
       "value": "Data"
-    },
-    "postInstallScriptUrl": {
-      "value": "http://emjuazdvsftpfiles.blob.core.windows.net/emjuazdvinstallscripts/"
-    },
-    "mntFileServiceStorageResourceGroup": {
-      "value": "EMJU-AZDV-Files"
-    },
-    "mntFileServiceStorageAccount": {
-      "value": "emjuazdvsftpfiles"
-    },
-    "mntFileSystem": {
-      "value": "//emjuazdvsftpfiles.file.core.windows.net/emjuazdvsftpfiles"
     }
   }
 }

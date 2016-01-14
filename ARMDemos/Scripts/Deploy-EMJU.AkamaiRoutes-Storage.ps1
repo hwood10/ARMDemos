@@ -47,6 +47,6 @@ $OutputValues = New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceG
 $ctx = New-AzureStorageContext -StorageAccountName $OutputValues.Outputs.storageAccountName.value -StorageAccountKey $OutputValues.Outputs.storageAccountKey.value
 
 # create a new container
-$containershare = New-AzureStorageContainer $OutputValues.Outputs.blobStorageShareName.value -Context $ctx -Permission Blob
+$containershare = New-AzureStorageContainer $OutputValues.Outputs.blobStorageShareName.value -Context $ctx -Permission Off
 
 Get-ChildItem –Path ..\Akamai\* -File -Recurse | Set-AzureStorageBlobContent -Container $OutputValues.Outputs.blobStorageShareName.value -Context $ctx
