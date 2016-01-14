@@ -140,11 +140,37 @@
       "metadata": {
         "description": "The existing virtual network subnet name."
       }
+    },
+    "postInstallScriptUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Post install scripts directory"
+      }
+    },
+    "mntFileServiceStorageResourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource Group that has the storage account that contains the file system to be mounted"
+      }
+    },
+    "mntFileServiceStorageAccount": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of existing storage account that contains the file system to be mounted"
+      }
+    },
+    "mntFileSystem": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of file system to be mounted"
+      }
     }
   },
   "variables": {
     "defaultApiVersion": "2015-06-15",
-    "clusterApiVersion": "2015-03-01-preview"
+    "clusterApiVersion": "2015-03-01-preview",
+    "mntFileServiceStorageAccount": "[parameters('mntFileServiceStorageAccount')]",
+    "mntFileSystem": "[parameters('mntFileSystem')]"
   },
   "resources": [
     {
@@ -206,7 +232,14 @@
               "virtualNetworkProfile": {
                 "id": "[resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName'))]",
                 "subnet": "[concat(resourceId(parameters('existingVirtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('existingVirtualNetworkName')), '/subnets/', parameters('existingVirtualNetworkSubnetName'))]"
-              }
+              },
+              "scriptActions": [
+                {
+                  "name": "setenvironmentvariable",
+                  "uri": "[concat(parameters('postInstallScriptUrl'), 'HDIWorkerNodePostInstallScript.sh')]",
+                  "parameters": "[concat(parameters('mntFileSystem'), parameters('mntFileServiceStorageAccount'), listKeys(resourceId(parameters('mntFileServiceStorageResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('mntFileServiceStorageAccount')), '2015-05-01-preview').key1)]"
+                }
+              ]
             },
             {
               "name": "workernode",

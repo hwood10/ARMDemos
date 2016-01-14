@@ -129,6 +129,7 @@
     <None Include="Extension_Scripts\DSE_dseNode.sh" />
     <None Include="Extension_Scripts\DSE_opscenter.sh" />
     <None Include="Extension_Scripts\DSE_vm-disk-utils-0.1.sh" />
+    <None Include="Extension_Scripts\HDIWorkerNodePostInstallScript.sh" />
     <None Include="Extension_Scripts\NewRelicInstall.sh" />
     <None Include="Extension_Scripts\PlayServerInstall.sh" />
     <None Include="Extension_Scripts\SFTPServerInstall.sh" />
@@ -292,6 +293,7 @@
     <None Include="Templates\EMJU-pf\EMJU.SSH-VMs.param.pf.json" />
     <None Include="Templates\EMJU.RedisCache-PAAS.json" />
     <None Include="Templates\EMJU.ServiceBus-PAAS.json" />
+    <None Include="Templates\J4UDevelopment\EMJU.FileShare-Storage.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.HDInsight-Base.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.HDInsight-VMs.param.dev.json" />
     <None Include="Templates\J4UDevelopment\EMJU.PublicService-VMs-Lite.param.dev.json" />
