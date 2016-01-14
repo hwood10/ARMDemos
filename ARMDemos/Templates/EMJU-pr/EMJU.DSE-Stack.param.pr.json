@@ -33,7 +33,7 @@
     "value": "ops"
   },
   "templateBaseUrl": {
-    "value": "https://emjuazprshare.blob.core.windows.net/emjuazprinstallscripts/"
+    "value": "https://raw.githubusercontent.com/J4U-Nimbus/ARMDemos/master/"
   },
   "nodesTemplateFile": {
     "value": "EMJU.DSE-Nodes.json"
