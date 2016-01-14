@@ -148,6 +148,8 @@
     <None Include="Templates\DSE-opscenterInstallTemplate.json" />
     <None Include="Templates\EMJU-pf\EMJU.AkamaiRoutes-Storage.param.pf.json" />
     <None Include="Templates\EMJU-pf\EMJU.HDInsight-Base.param.pf.json" />
+    <None Include="Templates\EMJU-pr\DSE_dseNode.sh" />
+    <None Include="Templates\EMJU-pr\EMJU.DSE-Stack.param.pr.json" />
     <None Include="Templates\EMJU-qa1\EMJU.HDInsight-Base.param.qa1.json" />
     <None Include="Templates\EMJU.HDInsight-Base.json" />
     <None Include="Templates\EMJU-pf\EMJU.HDInsight-VMs.param.pf.json" />
