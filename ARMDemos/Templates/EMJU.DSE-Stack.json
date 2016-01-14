@@ -163,7 +163,6 @@
     }
   },
   "variables": {
-    "opsclusterName": "[parameters('opsclusterName')]",
     "region": "[resourcegroup().location]",
     "templateBaseUrl": "[parameters('templateBaseUrl')]",
     "nodesTemplateUrl": "[concat(variables('templateBaseUrl'), parameters('nodesTemplateFile'))]",
