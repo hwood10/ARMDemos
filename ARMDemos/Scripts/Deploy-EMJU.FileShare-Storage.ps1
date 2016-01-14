@@ -60,6 +60,6 @@ Set-AzureStorageShareQuota -Share $fileshare -Quota $OutputValues.Outputs.ftpFil
 #New-AzureStorageDirectory -Share $fileshare -Path "/apps/LoyaltyJ4U/integration/hadoop_script/emju/data_input/transfer"
 
 # create a new container
-$containershare = New-AzureStorageContainer $OutputValues.Outputs.installStorageShareName.value -Context $ctx -Permission Off
+$containershare = New-AzureStorageContainer $OutputValues.Outputs.installStorageShareName.value -Context $ctx -Permission Blob
 
 Get-ChildItem –Path ..\Extension_Scripts\* | Set-AzureStorageBlobContent -Container $OutputValues.Outputs.installStorageShareName.value -Context $ctx
