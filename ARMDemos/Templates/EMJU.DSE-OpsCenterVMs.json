@@ -54,8 +54,6 @@
   "variables": {
     "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
     "subnetName": "[concat(variables('vnetID'),'/subnets/','Data')]",
-    "publicIpName": "[concat(parameters('dnsName'), 'PublicIp')]",
-    "publicIpRef": "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIpName'))]",
     "securityGroupName": "[concat(parameters('namespace'), 'nsg')]"
   },
   "resources": [
@@ -114,7 +112,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIpName')]",
+      "name": "opscenterpublicip",
       "location": "[parameters('region')]",
       "properties": {
         "publicIPAllocationMethod": "Dynamic"
@@ -136,7 +134,7 @@
       "name": "[concat(parameters('namespace'), 'nic')]",
       "location": "[parameters('region')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIpName'))]",
+        "Microsoft.Network/publicIPAddresses/opscenterpublicip",
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('securityGroupName'))]"
       ],
       "properties": {
@@ -145,7 +143,7 @@
             "name": "ipconfig1",
             "properties": {
               "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIpName'))]"
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'opscenterpublicip')]"
               },
               "privateIPAllocationMethod": "Static",
               "privateIPAddress": "[parameters('staticIp')]",
