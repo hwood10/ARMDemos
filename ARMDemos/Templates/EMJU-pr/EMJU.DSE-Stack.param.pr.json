@@ -29,9 +29,6 @@
   "adminPassword": {
     "value": "C@ss@ndr@1"
   },
-  "opsclusterName": {
-    "value": "ops"
-  },
   "templateBaseUrl": {
     "value": "https://raw.githubusercontent.com/J4U-Nimbus/ARMDemos/master/ARMDemos/Templates/"
   },

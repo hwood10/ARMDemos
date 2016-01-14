@@ -86,12 +86,6 @@
         "description": "Admin password for the virtual machines"
       }
     },
-    "opsclusterName": {
-      "type": "string",
-      "metadata": {
-        "description": "OpsCenter Cluster Name"
-      }
-    },
     "virtualNetworkResourceGroup": {
       "type": "string",
       "metadata": {
@@ -381,9 +375,6 @@
           },
           "staticIp": {
             "value": "[variables('opsCenterIP')]"
-          },
-          "dnsName": {
-            "value": "[variables('opsclusterName')]"
           },
           "vnetName": {
             "value": "[variables('vnetName')]"

@@ -35,9 +35,6 @@
     "staticIp": {
       "type": "string"
     },
-    "dnsName": {
-      "type": "string"
-    },
     "virtualNetworkResourceGroup": {
       "type": "string",
       "metadata": {
@@ -120,10 +117,7 @@
       "name": "[variables('publicIpName')]",
       "location": "[parameters('region')]",
       "properties": {
-        "publicIPAllocationMethod": "Dynamic",
-        "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsName')]"
-        }
+        "publicIPAllocationMethod": "Dynamic"
       }
     },
     {
