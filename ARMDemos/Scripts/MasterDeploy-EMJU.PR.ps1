@@ -15,8 +15,9 @@ $SFTPTemplate ="..\Templates\EMJU.SFTP-VMs.json"
 $RdpJumpTemplate ="..\Templates\EMJU.RdpJump-VMs.json"
 $AkamaiStorageTemplate = "..\Templates\EMJU.AkamaiRoutes-Storage.json"
 $FileSharingTemplate = "..\Templates\EMJU.FileShare-Storage.json"
-$RedisCacheTemplate = "..\Templates\EMJU.Redis-Cache.json"
+$RedisCacheTemplate = "..\Templates\EMJU.RedisCache-PAAS.json"
 $ServiceBusTemplate = "..\Templates\EMJU.ServiceBus-PAAS.json"
+$HDInsightBaseTemplate = "..\Templates\EMJU.HDInsight-Base.json"
 $HDInsightTemplate = "..\Templates\EMJU.HDInsight-VMs.json"
 $PublicServiceTemplate = "..\Templates\EMJU.PublicService-VMs.json"
 $PrivateServiceTemplate = "..\Templates\EMJU.PrivateService-VMs.json"
@@ -77,7 +78,7 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPR-AKAMAI")
 $invokeArgs += ("-TemplateFile", $AkamaiStorageTemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pr\EMJU.AkamaiRoutes-Storage.param.pr.json")
 $invokeArgs += $subscriptionArgs
-Invoke-Expression ".\Deploy-EMJU.AkamaiRoutes-Storage.ps1 $invokeArgs"
+#Invoke-Expression ".\Deploy-EMJU.AkamaiRoutes-Storage.ps1 $invokeArgs"
 
 ###############################
 ##FileSharing
@@ -267,11 +268,22 @@ $invokeArgs += ("-ResourceGroupName","EMJU-AZPR-DSE")
 $invokeArgs += ("-TemplateFile", $DSETemplate)
 $invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pr\EMJU.DSE-Stack.param.pr.json")
 $invokeArgs += $subscriptionArgs
-#Invoke-Expression ".\Deploy-EMJU.DSE-VMs.ps1 $invokeArgs"
+Invoke-Expression ".\Deploy-EMJU.DSE-VMs.ps1 $invokeArgs"
 
 ###############################
 ##HDInsight
 ###############################
+
+##HDInsightBase
+$invokeArgs = @()
+$invokeArgs += ("-ResourceGroupName","EMJU-AZPR-HDIBase")
+$invokeArgs += ("-TemplateFile", $HDInsightBaseTemplate)
+$invokeArgs += ("-TemplateParametersFile","..\Templates\EMJU-pr\EMJU.HDInsight-Base.param.pr.json")
+$invokeArgs += $subscriptionArgs
+#Invoke-Expression ".\Deploy-EMJU.HDInsight-Base.ps1 $invokeArgs"
+
+##HDInsight
+
 $invokeArgs = @()
 $invokeArgs += ("-ResourceGroupName","EMJU-AZPR-HDI")
 $invokeArgs += ("-TemplateFile", $HDInsightTemplate)
